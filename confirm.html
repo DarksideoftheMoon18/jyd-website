@@ -34,7 +34,7 @@
   </aside>
 </section>
 
-  <section class="status-strip quote-status-strip"><div><strong>Job ID</strong><span id="globalJobId" class="keep-one-line"></span></div><div><strong>Service Address</strong><span id="globalAddress"></span></div><div><strong>Date &amp; Time</strong><span id="globalWindow"></span></div><div><strong>Status</strong><span id="globalStatus"></span></div></section>
+  <section class="status-strip quote-status-strip"><div><strong>Job ID</strong><span id="globalJobId" class="keep-one-line"></span></div><div><strong>Service Address</strong><span id="globalAddress"></span></div><div><strong>Requested Window</strong><span id="globalWindow"></span></div><div><strong>Status</strong><span id="globalStatus"></span></div></section>
   <section class="main-grid pipeline-main-grid">
     <section class="card">
       <div class="summary-grid">
@@ -43,7 +43,7 @@
         <div class="summary-item"><b>Contact Information</b><span id="confirmContact"></span></div>
         <div class="summary-item"><b>Deposit Required</b><span id="confirmDepositAmount"></span></div>
       </div>
-      <h3 class="stack-heading">Pricing Summary</h3>
+      <h3 style="margin-top:18px;">Pricing Summary</h3>
       <div id="confirmPricingSummary"></div>
       <label class="terms-check" style="margin-top:18px;"><input id="confirmAccepted" type="checkbox"> <span>I understand my service window is secured after my deposit is completed.</span></label>
       <div class="action-row"><a class="btn secondary" href="windows.html">Back</a><button type="button" onclick="if(document.getElementById('confirmAccepted').checked){continueToPayment()}else{alert('Please confirm before continuing.')}">Continue to Deposit Payment</button></div>

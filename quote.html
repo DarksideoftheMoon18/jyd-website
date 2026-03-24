@@ -15,7 +15,7 @@
         <img src="https://i.imgur.com/zkXZ5QW.png" alt="Junkyard Dawgs Logo" class="brand-logo">
         <div class="brand-meta pipeline-brand-meta">
           <h1>Review Your Quote</h1>
-          <p>Make sure everything looks correct before selecting your date &amp; time.</p>
+          <p>Make sure everything looks correct before selecting your service window.</p>
         </div>
       </div>
       <aside class="invoice-summary-box pipeline-summary-top quote-summary-top">
@@ -28,7 +28,7 @@
             <strong id="quoteNumber" class="keep-one-line"></strong>
           </div>
           <div>
-            <span>Date &amp; Time:</span>
+            <span>Requested Window:</span>
             <strong id="quoteWindowTop"></strong>
           </div>
         </div>
@@ -38,7 +38,7 @@
     <section class="status-strip quote-status-strip">
       <div><strong>Job ID</strong><span id="globalJobId" class="keep-one-line"></span></div>
       <div><strong>Service Address</strong><span id="globalAddress"></span></div>
-      <div><strong>Date &amp; Time</strong><span id="globalWindow"></span></div>
+      <div><strong>Requested Window</strong><span id="globalWindow"></span></div>
       <div><strong>Status</strong><span id="globalStatus"></span></div>
     </section>
 
@@ -51,7 +51,7 @@
           <div class="summary-item"><b>Service Address</b><span id="quoteAddress"></span></div>
           <div class="summary-item"><b>Photos Received</b><span id="quotePhotos"></span></div>
           <div class="summary-item"><b>Quote Created On</b><span id="quoteDate"></span></div>
-          <div class="summary-item"><b>Date &amp; Time</b><span id="quoteWindow"></span></div>
+          <div class="summary-item"><b>Service Window</b><span id="quoteWindow"></span></div>
         </div>
 
         <div id="quoteEstimateSummary"></div>
@@ -59,7 +59,7 @@
 
         <div class="action-row">
           <a class="btn secondary" href="photos.html">Back</a>
-          <button type="button" onclick="continueToWindowRequest()">Select Date &amp; Time</button>
+          <button type="button" onclick="continueToWindowRequest()">Request Service Window</button>
         </div>
       </section>
 
@@ -67,10 +67,10 @@
         <h3>Photos Submitted</h3>
         <div id="quotePhotoPreview"></div>
 
-        <h3 class="stack-heading">What Happens Next</h3>
+        <h3 style="margin-top:18px;">What happens next</h3>
         <div class="info-list">
           <div class="info-item">
-            <strong>Review the Quote</strong>
+            <strong>Review the quote</strong>
             <span>Double check all the information on this page and be sure that it is accurate before picking a service date.</span>
           </div>
           <div class="info-item">
