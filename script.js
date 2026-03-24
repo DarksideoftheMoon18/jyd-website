@@ -526,8 +526,6 @@ function hydrateQuote() {
   setText('quoteContact', [data.phone, data.email].filter(Boolean).join(' • ') || '—');
   setText('quoteAddress', formatAddress(data));
   setText('quotePhotos', photoSummary(data).replace(/ yet/g, '').replace('yet', ''));
-  setText('quoteStatus', 'Next Step: Request Service Window');
-  setText('quoteProtection', 'Final pricing may adjust based on confirmed job conditions and items on site.');
   renderEstimateSummary('quoteEstimateSummary', data);
   renderQuotePhotoPreview('quotePhotoPreview', data);
   renderGlobalSummary('quote');
@@ -685,8 +683,6 @@ function hydrateReceipt() {
   setText('receiptPaymentMethod', 'Secure card payment');
   setText('receiptPaymentDate', data.paymentDate || '—');
   setText('receiptPaymentRef', `LOCAL-${String(data.receiptId || '').slice(-4)}`);
-  setText('receiptAmountPaid', currency(data.amountPaid));
-  setText('receiptRemainingBalance', data.manualReviewRequired ? 'Manual Review Required' : currency(data.balanceDue));
   setText('receiptStatusBody', statusLabel);
   setText('receiptApprovedTotal', data.manualReviewRequired ? 'Manual Review Required' : currency(data.approvedTotal));
   setText('receiptPaymentReceived', currency(data.amountPaid));
