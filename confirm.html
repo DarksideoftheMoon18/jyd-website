@@ -34,16 +34,16 @@
   </aside>
 </section>
 
-  <section class="status-strip quote-status-strip"><div><strong>Job ID</strong><span id="globalJobId" class="keep-one-line"></span></div><div><strong>Street Address</strong><span id="globalAddress"></span></div><div><strong>Requested Window</strong><span id="globalWindow"></span></div><div><strong>Status</strong><span id="globalStatus"></span></div></section>
+  <section class="status-strip quote-status-strip"><div><strong>Job ID</strong><span id="globalJobId" class="keep-one-line"></span></div><div><strong>Service Address</strong><span id="globalAddress"></span></div><div><strong>Date &amp; Time</strong><span id="globalWindow"></span></div><div><strong>Status</strong><span id="globalStatus"></span></div></section>
   <section class="main-grid pipeline-main-grid">
     <section class="card">
       <div class="summary-grid">
-        <div class="summary-item"><b>Street Address</b><span id="confirmAddress"></span></div>
+        <div class="summary-item"><b>Service Address</b><span id="confirmAddress"></span></div>
         <div class="summary-item"><b>Selected Date &amp; Time</b><span id="confirmWindow"></span></div>
         <div class="summary-item"><b>Contact Information</b><span id="confirmContact"></span></div>
         <div class="summary-item"><b>Deposit Required</b><span id="confirmDepositAmount"></span></div>
       </div>
-      <h3 style="margin-top:18px;">Pricing Summary</h3>
+      <h3 class="stack-heading">Pricing Summary</h3>
       <div id="confirmPricingSummary"></div>
       <label class="terms-check" style="margin-top:18px;"><input id="confirmAccepted" type="checkbox"> <span>I understand my service window is secured after my deposit is completed.</span></label>
       <div class="action-row"><a class="btn secondary" href="windows.html">Back</a><button type="button" onclick="if(document.getElementById('confirmAccepted').checked){continueToPayment()}else{alert('Please confirm before continuing.')}">Continue to Deposit Payment</button></div>
@@ -52,7 +52,7 @@
       <section class="card progress-card">
         <h3>Service Details</h3>
         <div class="info-list">
-          <div class="info-item"><strong>Street Address</strong><span id="confirmAddressSide"></span></div>
+          <div class="info-item"><strong>Service Address</strong><span id="confirmAddressSide"></span></div>
           <div class="info-item"><strong>Service</strong><span>Junk Removal</span></div>
           <div class="info-item"><strong>Service Window</strong><span id="confirmWindowSide"></span></div>
         </div>
