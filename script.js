@@ -427,7 +427,6 @@ function saveIntakeAndContinue() { saveJob({ ...loadJob(), ...captureIntakeForm(
 
 function hydratePricing() {
   const data = loadJob();
-  ['pricingJobSize','pricingStairAccess','pricingCarryDistance','pricingHeavyHandling','pricingSpecialtyDisposal','pricingTravelArea'].forEach((id, i) => {});
   fillField('pricingJobSize', data.jobSize);
   fillField('pricingStairAccess', data.stairAccess);
   fillField('pricingCarryDistance', data.carryDistance);
@@ -507,7 +506,7 @@ function hydratePhotos() {
   setText('photoCounter', `${data.photos.length} / 8 uploaded`);
   renderPhotoList(data.photos || []);
   bindPhotoInput();
-  renderGlobalSummary('intake');
+  renderGlobalSummary('photos');
 }
 function savePhotosAndContinue() { updateJob({ status: 'review_in_progress' }); next('quote.html'); }
 
@@ -742,6 +741,7 @@ function hydrateCompletion() {
   const data = loadJob();
   setText('completionJobId', data.jobId || '—');
   setText('completionWindow', formatWindow(data.preferredDate, data.preferredWindow));
+  setText('completionWindowTop', formatWindow(data.preferredDate, data.preferredWindow));
   setText('completionAddress', formatAddress(data));
   setText('completionDepositStatus', data.paymentStatus === 'deposit_paid' ? 'Deposit Paid' : getPipelineStatusLabel(data, 'payment'));
   renderGlobalSummary(data.jobCompleted ? 'invoice' : 'completion');
