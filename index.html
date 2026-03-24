@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Junkyard Dawgs LLC | Twin Cities Junk Removal</title>
+  <meta name="description" content="Professional junk removal and cleanouts across the Twin Cities with clear pricing, respectful service, and no surprises." />
+  <style>
+    :root{
+      --bg:#0f1115;
+      --surface:#171a21;
+      --surface-2:#1f2430;
+      --card:#ffffff;
+      --text:#101418;
+      --text-light:#f5f7fb;
+      --muted:#6b7280;
+      --muted-light:#c7ced9;
+      --border:#e5e7eb;
+      --accent:#0f8b8d;
+      --accent-dark:#0b6667;
+      --success:#15803d;
+      --danger:#991b1b;
+      --priority:#facc15;
+      --priority-dark:#eab308;
+      --shadow:0 14px 34px rgba(16,20,24,.12);
+      --radius-lg:22px;
+      --radius-md:16px;
+      --radius-sm:12px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#f5f7fa;line-height:1.55}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
+    .section{padding:4.5rem 0}
+    .section-header{max-width:760px;margin-bottom:2rem}
+    .eyebrow{display:inline-block;margin-bottom:.85rem;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+    h1,h2,h3{margin:0 0 .85rem;line-height:1.1}
+    h1{font-size:clamp(2.5rem,6vw,4.8rem);letter-spacing:-.03em}
+    h2{font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.02em}
+    h3{font-size:1.25rem}
+    p{margin:0 0 1rem}
+    .lead{font-size:1.08rem;color:#4b5563}
+    .site-header{position:relative;background:rgba(15,17,21,.96);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav-wrap{min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0}
+    .brand{display:flex;align-items:center;gap:1rem;color:var(--text-light);font-weight:700}
+    .brand-logo{width:74px;height:74px;border-radius:18px;object-fit:cover;background:#111827;border:1px solid rgba(255,255,255,.12)}
+    .brand-text{display:flex;flex-direction:column;line-height:1.12}
+    .brand-text span:first-child{font-size:1.08rem}
+    .brand-text span:last-child{font-size:.92rem;font-weight:500;color:var(--muted-light)}
+    .nav-links{display:flex;align-items:center;gap:1.15rem;flex-wrap:wrap}
+    .nav-links a{color:var(--text-light);font-size:.95rem;opacity:.94;font-weight:600}
+    .nav-links a:hover{opacity:1}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.95rem 1.35rem;border-radius:999px;font-weight:700;border:none;cursor:pointer;transition:.2s ease;text-align:center}
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 20px rgba(15,139,141,.24)}
+    .btn-primary:hover{background:var(--accent-dark)}
+    .btn-priority{background:var(--priority);color:#111827;box-shadow:0 10px 20px rgba(250,204,21,.26)}
+    .btn-priority:hover{background:var(--priority-dark)}
+    .btn-light{background:#fff;color:var(--text);border:1px solid var(--border)}
+    .hero{
+      background:
+        linear-gradient(rgba(15,17,21,.72),rgba(15,17,21,.84)),
+        url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      color:#fff;
+      padding:5.6rem 0 4.7rem;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .hero p{color:#e5e7eb;max-width:650px}
+    .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin:1.6rem 0 1rem}
+    .trust-line{font-weight:700;color:#f5f7fb;margin-bottom:0}
+    .hero-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:26px;
+      padding:1.2rem;
+      backdrop-filter:blur(8px);
+      box-shadow:0 20px 40px rgba(0,0,0,.18)
+    }
+    .hero-card img{width:100%;height:380px;object-fit:cover;border-radius:18px}
+    .hero-card-note{margin-top:1rem;color:#dbe3ee;font-size:.95rem}
+    .grid-3,.grid-4,.grid-2{display:grid;gap:1.25rem}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.35rem;box-shadow:var(--shadow)}
+    .image-card{overflow:hidden;padding:0;display:flex;flex-direction:column;min-height:100%}
+    .image-card img{width:100%;height:230px;object-fit:cover}
+    .image-card-content{padding:1.15rem 1.15rem 1.3rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+    .service-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.4rem}
+    .service-list a.card{transition:transform .2s ease, box-shadow .2s ease}
+    .service-list a.card:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(16,20,24,.16)}
+    .learn-more{display:inline-flex;align-items:center;gap:.35rem;color:var(--accent);font-weight:700;margin-top:auto}
+    .take-wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+    .soft-card{background:#fbfcfe;border-color:#e8edf3;box-shadow:0 10px 24px rgba(16,20,24,.07)}
+    .check-list,.x-list,.steps-list{list-style:none;padding:0;margin:0}
+    .check-list li,.x-list li{display:flex;gap:.8rem;align-items:flex-start;padding:.8rem 0;border-bottom:1px solid #eef2f7}
+    .check-list li:last-child,.x-list li:last-child{border-bottom:none}
+    .check{color:var(--success);font-weight:800;min-width:20px}
+    .xmark{color:var(--danger);font-weight:800;min-width:20px}
+    .helper-line{margin-top:1rem;color:var(--muted);font-size:.98rem}
+    .steps-list{display:grid;gap:1rem;margin-top:1.25rem}
+    .steps-list li{display:grid;grid-template-columns:54px 1fr;gap:1rem;align-items:start;padding:1rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow)}
+    .step-num{width:54px;height:54px;border-radius:50%;background:#eef8f8;color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:1rem}
+    .pricing-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
+    .pricing-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.35rem;box-shadow:var(--shadow);min-height:100%}
+    .pricing-card .price{display:block;font-size:1.55rem;font-weight:700;margin:.65rem 0 .8rem;color:var(--text)}
+    .pricing-reassurance{margin-top:1rem;color:#374151;font-weight:600}
+    .before-after-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
+    .before-after-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
+    .before-after-images{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;padding:.35rem;background:#e5e7eb}
+    .before-after-images img{height:185px;object-fit:cover;border-radius:14px}
+    .ba-labels{display:flex;justify-content:space-between;padding:0 1rem 1rem;font-size:.9rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .testimonials{background:#f0f4f8}
+    .testimonial-grid-empty{min-height:18px}
+    .final-cta{background:linear-gradient(135deg,#0f1115,#1b2330);color:#fff;border-radius:28px;padding:2rem;box-shadow:0 20px 40px rgba(15,17,21,.18)}
+    .final-cta p{color:#d4dbe5;max-width:780px}
+    .final-cta-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.5rem}
+    .contact-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow)}
+    .contact-lines{display:grid;gap:.8rem;margin-top:1rem;color:#374151}
+    .footer{background:var(--bg);color:#fff;padding:2.5rem 0;margin-top:2rem}
+    .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:1.25rem;align-items:start}
+    .footer-brand{display:flex;align-items:center;gap:.9rem}
+    .footer-brand img{width:58px;height:58px;border-radius:14px}
+    .footer p,.footer a,.footer span{color:#d6deea}
+    .footer-links{display:grid;gap:.55rem}
+    .small{font-size:.92rem;color:var(--muted)}
+    @media (max-width:980px){
+      .hero-grid,.grid-3,.grid-4,.grid-2,.service-list,.pricing-grid,.before-after-grid,.take-wrap,.footer-grid{grid-template-columns:1fr 1fr}
+      .hero-card img{height:320px}
+    }
+    @media (max-width:720px){
+      .nav-wrap{flex-direction:column;align-items:flex-start;padding:.9rem 0}
+      .nav-links{width:100%}
+      .hero{padding-top:4.6rem}
+      .hero-grid,.grid-3,.grid-4,.grid-2,.service-list,.pricing-grid,.before-after-grid,.take-wrap,.footer-grid{grid-template-columns:1fr}
+      .hero-card img{height:260px}
+      .steps-list li{grid-template-columns:1fr}
+      .step-num{width:46px;height:46px}
+      .final-cta{padding:1.4rem}
+      .section{padding:3.4rem 0}
+      .before-after-images img{height:160px}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand">
+        <img class="brand-logo" src="https://i.imgur.com/zkXZ5QW.png" alt="Junkyard Dawgs LLC logo" />
+        <div class="brand-text">
+          <span>Junkyard Dawgs LLC</span>
+          <span>Twin Cities Junk Removal</span>
+        </div>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#results">Results</a>
+        <a href="#priority-list">Priority List</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow" style="color:#9de8e8;">Twin Cities Junk Removal</span>
+          <h1>Clutter Happens.<br />We Handle It.</h1>
+          <p class="lead">Fast, reliable junk removal with upfront pricing and no surprises.</p>
+          <p class="trust-line">Serving Twin Cities homeowners, landlords, and property managers</p>
+          <div class="hero-actions">
+            <a href="intake.html" class="btn btn-primary">Get Your Quote</a>
+            <a href="#priority-list" class="btn btn-priority">Join the Priority List</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80" alt="Temporary junk removal placeholder showing work truck and cleanup activity" />
+          <p class="hero-card-note">Temporary junk-removal image placeholder. Final image sourcing will be completed in a separate pass.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Services</span>
+          <h2>Professional junk removal and cleanouts for homes, properties, and ongoing service relationships.</h2>
+          <p class="lead">Built for customers who want the job done right the first time.</p>
+        </div>
+        <div class="service-list">
+          <a class="card image-card" href="intake.html">
+            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Temporary residential junk removal placeholder" />
+            <div class="image-card-content">
+              <h3>Residential Junk Removal</h3>
+              <p>Furniture, appliances, mattresses, and general household junk handled with a clean process from start to finish.</p>
+              <span class="learn-more">Learn more →</span>
+            </div>
+          </a>
+          <a class="card image-card" href="intake.html">
+            <img src="https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?auto=format&fit=crop&w=1200&q=80" alt="Temporary property cleanout placeholder" />
+            <div class="image-card-content">
+              <h3>Property Cleanouts</h3>
+              <p>Garage, basement, storage unit, turnover, and transition cleanout support for fast-moving situations.</p>
+              <span class="learn-more">Learn more →</span>
+            </div>
+          </a>
+          <a class="card image-card" href="intake.html">
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Temporary ongoing service partnership placeholder" />
+            <div class="image-card-content">
+              <h3>Ongoing Service Partnerships</h3>
+              <p>Professional support for property managers, landlords, realtors, and repeat partners who need dependable service.</p>
+              <span class="learn-more">Learn more →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">What We Take / What We Don’t Take</span>
+          <h2>Simple rules. Clear expectations.</h2>
+        </div>
+        <div class="take-wrap">
+          <article class="card soft-card">
+            <h3>What We Take</h3>
+            <ul class="check-list">
+              <li><span class="check">✓</span><span>Furniture</span></li>
+              <li><span class="check">✓</span><span>Appliances</span></li>
+              <li><span class="check">✓</span><span>Mattresses</span></li>
+              <li><span class="check">✓</span><span>Garage clutter</span></li>
+              <li><span class="check">✓</span><span>Household junk</span></li>
+              <li><span class="check">✓</span><span>Cleanout debris</span></li>
+              <li><span class="check">✓</span><span>Storage unit contents</span></li>
+              <li><span class="check">✓</span><span>Light yard items</span></li>
+            </ul>
+          </article>
+          <article class="card soft-card">
+            <h3>What We Don’t Take</h3>
+            <ul class="x-list">
+              <li><span class="xmark">✕</span><span>Hazardous chemicals</span></li>
+              <li><span class="xmark">✕</span><span>Wet paint</span></li>
+              <li><span class="xmark">✕</span><span>Asbestos</span></li>
+              <li><span class="xmark">✕</span><span>Biohazard waste</span></li>
+              <li><span class="xmark">✕</span><span>Regulated medical waste</span></li>
+            </ul>
+          </article>
+        </div>
+        <p class="helper-line">Not sure about an item? Include it in your request and we’ll confirm.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">How It Works</span>
+          <h2>Clear process. Professional follow-through.</h2>
+        </div>
+        <ol class="steps-list">
+          <li>
+            <div class="step-num">1</div>
+            <div>
+              <h3>Send your job details</h3>
+              <p>Share the items, access conditions, and job information so the quote starts from the right details.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div>
+              <h3>Review your quote</h3>
+              <p>See the estimated price clearly before moving into the next step.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div>
+              <h3>Pick your service window</h3>
+              <p>Choose the service window that works best for your schedule.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">4</div>
+            <div>
+              <h3>Problem Solved</h3>
+              <p>Your junk is handled and the space is back under control.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Why Choose Junkyard Dawgs</span>
+          <h2>Hard-working crews. Professional service. Clear pricing.</h2>
+        </div>
+        <div class="grid-4">
+          <article class="card">
+            <h3>Clear Pricing</h3>
+            <p>Pricing is based on load size, access, material type, and job conditions.</p>
+          </article>
+          <article class="card">
+            <h3>No Surprise Fees</h3>
+            <p>Stairs, long carry distance, heavy items, and special handling are reviewed during the quote process.</p>
+          </article>
+          <article class="card">
+            <h3>Confirmed Scheduling</h3>
+            <p>Lock in your preferred service window with a deposit during the intake process.</p>
+          </article>
+          <article class="card">
+            <h3>Twin Cities Focused</h3>
+            <p>Built for reliable local service with professional communication and a clean process from start to finish.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Transparent Pricing</span>
+          <h2>Transparent Pricing Structure</h2>
+          <p class="lead">Final pricing depends on load size, material type, stairs, carry distance, and any special handling required.</p>
+          <p class="pricing-reassurance">You’ll see your estimated price before confirming your job.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <h3>Minimum Service</h3>
+            <span class="price">$175</span>
+            <p>Minimum includes removal of one bulky item or equivalent small load.</p>
+          </article>
+          <article class="pricing-card">
+            <h3>Labor Adjustments</h3>
+            <span class="price">Quote-Based Adjustment</span>
+            <p>Long carry distances of 75 feet or more may affect pricing and are reviewed during the quote process.</p>
+          </article>
+          <article class="pricing-card">
+            <h3>Heavy Items</h3>
+            <span class="price">Special Handling</span>
+            <p>Concrete, dirt, roofing, tile, and other dense materials require special handling.</p>
+          </article>
+          <article class="pricing-card">
+            <h3>Service Area &amp; Travel</h3>
+            <span class="price">30–50+ Miles</span>
+            <p>30-mile service area included. 30–50 miles with travel adjustment. 50+ miles by approval.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Before / After Results</span>
+          <h2>Before-and-after examples from junk removal and cleanout work.</h2>
+        </div>
+        <div class="before-after-grid">
+          <article class="before-after-card">
+            <div class="before-after-images">
+              <img src="https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?auto=format&fit=crop&w=900&q=80" alt="Temporary before placeholder for garage junk removal" />
+              <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80" alt="Temporary after placeholder for garage junk removal" />
+            </div>
+            <div class="ba-labels"><span>Before</span><span>After</span></div>
+          </article>
+          <article class="before-after-card">
+            <div class="before-after-images">
+              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Temporary before placeholder for basement cleanout" />
+              <img src="https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?auto=format&fit=crop&w=900&q=80" alt="Temporary after placeholder for basement cleanout" />
+            </div>
+            <div class="ba-labels"><span>Before</span><span>After</span></div>
+          </article>
+          <article class="before-after-card">
+            <div class="before-after-images">
+              <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=900&q=80" alt="Temporary before placeholder for property cleanout" />
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="Temporary after placeholder for property cleanout" />
+            </div>
+            <div class="ba-labels"><span>Before</span><span>After</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Testimonials</span>
+          <h2>What Customers Are Saying</h2>
+        </div>
+        <div class="grid-3 testimonial-grid-empty"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="final-cta">
+          <h2>Junkyard Dawgs serves the Twin Cities with professional junk removal.</h2>
+          <p>Request your quote or join the priority list to get started.</p>
+          <div class="final-cta-actions">
+            <a href="intake.html" class="btn btn-primary">Get Your Quote</a>
+            <a href="#priority-list" class="btn btn-priority">Join the Priority List</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="priority-list">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Contact</span>
+          <h2>Get in touch with Junkyard Dawgs</h2>
+          <p class="lead">Request a quote or join the priority list to stay updated.</p>
+        </div>
+        <div class="contact-box">
+          <h3>Contact Information</h3>
+          <div class="contact-lines">
+            <p><strong>Email:</strong> info@junkyarddawgsllc.com</p>
+            <p><strong>Phone:</strong> (218) 555-3887</p>
+            <p><strong>Service Area:</strong> Twin Cities, Minnesota</p>
+          </div>
+          <div class="final-cta-actions" style="margin-bottom:0;">
+            <a class="btn btn-priority" href="mailto:info@junkyarddawgsllc.com?subject=Priority%20List%20Request">Join Priority List</a>
+            <a class="btn btn-light" href="tel:12185553887">Call for Updates</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="https://i.imgur.com/zkXZ5QW.png" alt="Junkyard Dawgs LLC logo" />
+          <div>
+            <h3>Junkyard Dawgs LLC</h3>
+            <p>Professional junk removal with clear pricing, respectful service, and no surprises.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="pricing.html">Pricing</a>
+          <a href="#services">Services</a>
+          <a href="#results">Results</a>
+          <a href="#priority-list">Priority List</a>
+        </div>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-links">
+          <a href="tel:12185553887">(218) 555-3887</a>
+          <a href="mailto:info@junkyarddawgsllc.com">info@junkyarddawgsllc.com</a>
+          <span>Twin Cities, Minnesota</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

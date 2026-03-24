@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Junkyard Dawgs | Pricing</title>
+</head>
+<body class="app-page pipeline-page pricing-page" onload="hydratePricing()">
+<main class="app-shell pipeline-doc-shell"><section class="pipeline-sheet">
+  
+<section class="invoice-header pipeline-header">
+  <div class="brand-block">
+    <img src="https://i.imgur.com/zkXZ5QW.png" alt="Junkyard Dawgs Logo" class="brand-logo">
+    <div class="brand-meta pipeline-brand-meta"><h1>Pricing Summary</h1><p>Clutter happens. We handle the solution.</p></div>
+  </div>
+  
+</section>
+<section class="main-grid wide-main-grid pipeline-main-grid">
+
+    <section class="card">
+      <h2>Base Service Pricing</h2>
+      <div class="summary-grid">
+        <div class="summary-item"><b>Minimum Service</b><span>Starting at $175</span></div>
+        <div class="summary-item"><b>1/8 Truck Load</b><span>Starting at $245</span></div>
+        <div class="summary-item"><b>1/4 Truck Load</b><span>Starting at $349</span></div>
+        <div class="summary-item"><b>3/8 Truck Load</b><span>Starting at $475</span></div>
+        <div class="summary-item"><b>1/2 Truck Load</b><span>Starting at $575</span></div>
+        <div class="summary-item"><b>3/4 Truck Load</b><span>Starting at $775</span></div>
+        <div class="summary-item"><b>Full Truck Load</b><span>Starting at $949</span></div>
+      </div>
+      <p class="page-intro" style="margin-top:14px;">Actual pricing may vary depending on access conditions, material type, and special handling requirements.</p>
+
+      <h2 class="stack-heading">What Affects Pricing</h2>
+      <div class="info-list">
+        <div class="info-item"><strong>Load Size</strong><span>Pricing increases with the amount of space your items take in the truck.</span></div>
+        <div class="info-item"><strong>Access Conditions</strong><span>Stairs, long carry distances, tight spaces, or difficult access can affect labor requirements.</span></div>
+        <div class="info-item"><strong>Material Type</strong><span>Dense debris such as concrete, dirt, roofing, or tile requires additional handling and disposal.</span></div>
+        <div class="info-item"><strong>Special Handling</strong><span>Appliances, mattresses, electronics, and other regulated items may require additional disposal handling.</span></div>
+        <div class="info-item"><strong>Travel Area</strong><span>Primary service area includes up to 30 miles. Travel beyond 30 miles may affect pricing.</span></div>
+      </div>
+    </section>
+    <aside class="card progress-card">
+      <h2>Estimate Your Junk Removal Cost</h2>
+      <p class="page-intro">Use the calculator below to estimate your junk removal cost based on job size and conditions. The calculator provides a guided estimate before requesting your service window.</p>
+      <div class="calc-grid">
+        <div class="field"><label for="pricingJobSize">Priced by Volume</label><select id="pricingJobSize" onchange="previewPricingCalculator()"><option value="">Select Truck Load Size</option><option value="minimum_service">Minimum Service</option><option value="load_1_8">1/8 Truck Load</option><option value="load_1_4">1/4 Truck Load</option><option value="load_3_8">3/8 Truck Load</option><option value="load_1_2">1/2 Truck Load</option><option value="load_3_4">3/4 Truck Load</option><option value="full_load">Full Truck Load</option></select></div>
+        <div class="field"><label for="pricingStairAccess">Stair Access</label><select id="pricingStairAccess" onchange="previewPricingCalculator()"><option value="none">No Stairs</option><option value="one_flight">1 Flight</option><option value="two_flights">2 Flights</option><option value="complex">3+ Flights / Complex Stair Access</option></select></div>
+        <div class="field"><label for="pricingCarryDistance">Carry Distance</label><select id="pricingCarryDistance" onchange="previewPricingCalculator()"><option value="standard">Standard Access</option><option value="ft_75_100">75–100 ft</option><option value="ft_100_150">100–150 ft</option><option value="long_custom">150+ Ft / Repeated Long Carry</option></select></div>
+        <div class="field"><label for="pricingHeavyHandling">Heavy Items</label><select id="pricingHeavyHandling" onchange="previewPricingCalculator()"><option value="none">None</option><option value="dense_debris">Dense Debris</option><option value="single_extra_heavy">Single Extra-Heavy Item</option><option value="multiple_dense_custom">Multiple Dense Items / Heavy Debris Load</option></select></div>
+        <div class="field"><label for="pricingSpecialtyDisposal">Specialty Disposal</label><select id="pricingSpecialtyDisposal" onchange="previewPricingCalculator()"><option value="none">None</option><option value="standard_appliance">Standard Appliance</option><option value="refrigerant_appliance">Refrigerant Appliance</option><option value="tv_ewaste_tire_mattress">TV / E-Waste / Tire / Mattress</option><option value="built_in_custom">Built-In / Difficult Removal</option></select></div>
+        <div class="field"><label for="pricingTravelArea">Travel Area</label><select id="pricingTravelArea" onchange="previewPricingCalculator()"><option value="primary">Primary Service Area</option><option value="extended_metro">Extended Metro</option><option value="outside_standard">Outside Standard Service Area</option><option value="multiple_stops_custom">Multiple Pickup Stops</option></select></div>
+      </div>
+      <div id="pricingEstimateSummary"></div>
+      <p class="inline-note" id="pricingManualReview"></p>
+      <p class="inline-note">Taxes and fees are estimated based on service location and job type.</p>
+      <p class="inline-note"></p>
+      <p class="inline-note">Build your estimate, then request your quote.</p><div class="action-row"><button type="button" onclick="usePricingAndContinue()">Get Your Quote</button></div>
+    </aside>
+  </section>
+  <section class="card" style="margin-top:24px;">
+    <h2>Transparency Note</h2>
+    <p>Final pricing depends on load size, material type, stairs, carry distance, and any special handling required.</p>
+    <p>Pricing assumes the items shown in submitted photos.</p>
+    <p>Additional items not visible in photos may require a revised quote.</p>
+    <p class="inline-note">For safety and environmental reasons, we cannot remove hazardous materials, chemicals, paints and solvents, biohazard waste, or regulated waste materials.</p>
+    
+  </section>
+</section></main>
+<footer class="site-footer"><div class="footer-wrap">© 2026 Junkyard Dawgs LLC • Twin Cities pricing page</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

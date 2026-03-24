@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Junkyard Dawgs | Job Completion</title>
+</head>
+<body class="app-page pipeline-page" onload="hydrateCompletion()">
+<main class="app-shell pipeline-doc-shell"><section class="pipeline-sheet">
+  
+<section class="invoice-header pipeline-header">
+  <div class="brand-block">
+    <img src="https://i.imgur.com/zkXZ5QW.png" alt="Junkyard Dawgs Logo" class="brand-logo">
+    <div class="brand-meta pipeline-brand-meta">
+      <h1>Job Completion</h1>
+      <p>Use this step only after the job has actually been completed. Continue to the final invoice for remaining balance collection.</p>
+    </div>
+  </div>
+  <aside class="invoice-summary-box pipeline-summary-top">
+    <div class="summary-top">
+      <span class="summary-label">Step 7</span>
+      <span class="status-badge teal" id="completionDepositStatus"></span>
+    </div>
+    <div class="summary-grid">
+      <div><span>Job ID</span><strong id="completionJobId"></strong></div>
+      <div><span>Selected window</span><strong id="completionWindow"></strong></div>
+    </div>
+  </aside>
+</section>
+
+  <section class="status-strip pipeline-status-strip"><div><strong>Job ID</strong><span id="globalJobId"></span></div><div><strong>Service Address</strong><span id="globalAddress"></span></div><div><strong>Requested Window</strong><span id="globalWindow"></span></div><div><strong>Status</strong><span id="globalStatus"></span></div></section>
+  <section class="main-grid pipeline-main-grid">
+    <section class="card">
+      <div class="summary-grid">
+        <div class="summary-item"><b>Service Window</b><span id="completionWindow"></span></div>
+        <div class="summary-item"><b>Job Address</b><span id="completionAddress"></span></div>
+      </div>
+      <div class="notice-box" style="margin-top:18px;">This stage is separate from the deposit step. Final payment should not be collected until the job is actually complete.</div>
+      <div class="action-row"><a class="btn secondary" href="payment.html">Back</a><button type="button" onclick="markJobCompleted()">Job Completed — Continue to Final Invoice</button></div>
+    </section>
+    <aside class="card progress-card"><h3>Next Step</h3><div class="info-list"><div class="info-item"><strong>Final Invoice</strong><span>After the job is completed, the final invoice will show any remaining balance due.</span></div></div></aside>
+  </section>
+</section></main>
+<footer class="site-footer"><div class="footer-wrap">© 2026 Junkyard Dawgs LLC • Job completion</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Junkyard Dawgs | Review Quote</title>
+</head>
+<body class="app-page pipeline-page" onload="hydrateQuote()">
+<main class="app-shell pipeline-doc-shell">
+  <section class="pipeline-sheet">
+
+    <section class="invoice-header pipeline-header quote-page-header">
+      <div class="brand-block quote-brand-block">
+        <img src="https://i.imgur.com/zkXZ5QW.png" alt="Junkyard Dawgs Logo" class="brand-logo">
+        <div class="brand-meta pipeline-brand-meta">
+          <h1>Review Your Quote</h1>
+          <p>Make sure everything looks correct before selecting your service window.</p>
+        </div>
+      </div>
+      <aside class="invoice-summary-box pipeline-summary-top quote-summary-top">
+        <div class="summary-top">
+          <span class="summary-label">Step 3</span>
+</div>
+        <div class="summary-grid summary-grid-plain quote-summary-grid">
+          <div>
+            <span>Job ID:</span>
+            <strong id="quoteNumber" class="keep-one-line"></strong>
+          </div>
+          <div>
+            <span>Requested Window:</span>
+            <strong id="quoteWindowTop"></strong>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="status-strip quote-status-strip">
+      <div><strong>Job ID</strong><span id="globalJobId" class="keep-one-line"></span></div>
+      <div><strong>Street Address</strong><span id="globalAddress"></span></div>
+      <div><strong>Requested Window</strong><span id="globalWindow"></span></div>
+      <div><strong>Status</strong><span id="globalStatus"></span></div>
+    </section>
+
+    <section class="main-grid wide-main-grid pipeline-main-grid quote-main-grid">
+      <section class="card">
+        <h2>Quote Summary</h2>
+        <div class="summary-grid">
+          <div class="summary-item"><b>Client</b><span id="quoteCustomer"></span></div>
+          <div class="summary-item"><b>Contact Information</b><span id="quoteContact"></span></div>
+          <div class="summary-item"><b>Street Address</b><span id="quoteAddress"></span></div>
+          <div class="summary-item"><b>Photos Received</b><span id="quotePhotos"></span></div>
+          <div class="summary-item"><b>Quote Created On</b><span id="quoteDate"></span></div>
+          <div class="summary-item"><b>Service Window</b><span id="quoteWindow"></span></div>
+        </div>
+
+        <div id="quoteEstimateSummary"></div>
+        <p class="inline-note">Estimated total is based on the details, photos, and job conditions provided and may adjust if actual conditions differ on site.</p>
+
+        <div class="action-row">
+          <a class="btn secondary" href="photos.html">Back</a>
+          <button type="button" onclick="continueToWindowRequest()">Request Service Window</button>
+        </div>
+      </section>
+
+      <aside class="card progress-card">
+        <h3>Photos Submitted</h3>
+        <div id="quotePhotoPreview"></div>
+
+        <h3 style="margin-top:18px;">What happens next</h3>
+        <div class="info-list">
+          <div class="info-item">
+            <strong>Review the quote</strong>
+            <span>Double check all the information on this page and be sure that it is accurate before picking a service date.</span>
+          </div>
+          <div class="info-item">
+            <strong>Service Window</strong>
+            <span>Choose a specific date and 2 hour time frame that works with your schedule.</span>
+          </div>
+          <div class="info-item">
+            <strong>Deposit</strong>
+            <span>A deposit is collected after your service window is confirmed.</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+  </section>
+</main>
+<footer class="site-footer"><div class="footer-wrap">© 2026 Junkyard Dawgs LLC • Review quote</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

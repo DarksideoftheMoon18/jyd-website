@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Junkyard Dawgs | Select Your Preferred Time & Date</title>
+</head>
+<body class="app-page pipeline-page windows-page" onload="hydrateWindows()">
+<main class="app-shell pipeline-doc-shell"><section class="pipeline-sheet">
+  
+<section class="invoice-header pipeline-header windows-page-header">
+  <div class="brand-block">
+    <img src="https://i.imgur.com/zkXZ5QW.png" alt="Junkyard Dawgs Logo" class="brand-logo">
+    <div class="brand-meta pipeline-brand-meta">
+      <h1>Select Your Preferred Date &amp; Time</h1>
+      <p>Choose a service window that works best for your schedule.</p>
+    </div>
+  </div>
+  <aside class="invoice-summary-box pipeline-summary-top quote-summary-top">
+    <div class="summary-top">
+      <span class="summary-label">Step 4</span>
+    </div>
+    <div class="summary-grid summary-grid-plain quote-summary-grid">
+      <div>
+            <span>Job ID:</span>
+            <strong id="windowJobId" class="keep-one-line"></strong>
+          </div>
+          <div>
+            <span>Requested Window:</span>
+            <strong id="windowPreview"></strong>
+          </div>
+    </div>
+  </aside>
+</section>
+
+  <section class="status-strip pipeline-status-strip windows-status-strip"><div><strong>Job ID</strong><span id="globalJobId" class="keep-one-line"></span></div><div><strong>Street Address</strong><span id="globalAddress"></span></div><div><strong>Requested Window</strong><span id="globalWindow"></span></div><div><strong>Status</strong><span id="globalStatus"></span></div></section>
+  <section class="main-grid pipeline-main-grid">
+    <section class="card">
+      <div class="field-grid"><div class="field"><label for="preferredDate">Preferred Date</label><input id="preferredDate" type="date"></div><div class="field"><label for="preferredWindow">Preferred Time</label><select id="preferredWindow"><option value="">Select a Time</option><option>8:00 AM – 10:00 AM</option><option>10:00 AM – 12:00 PM</option><option>12:00 PM – 2:00 PM</option><option>2:00 PM – 4:00 PM</option><option>4:00 PM – 6:00 PM</option></select></div></div>
+      <div class="alert-note">Your service window is reserved after your deposit is completed.</div>
+      <div class="action-row"><a class="btn secondary" href="quote.html">Back</a><button type="button" onclick="saveWindowAndContinue()">Continue to Confirm Your Time</button></div>
+    </section>
+    <aside class="card progress-card"><h3>Window Selection Notes</h3><div class="info-list"><div class="info-item"><strong>Service Window</strong><span>Your selected date and time will appear on your booking confirmation.</span></div><div class="info-item"><strong>Deposit Required</strong><span>Your deposit secures your selected service window.</span></div><div class="info-item"><strong>Cancellation Policy</strong><span>Confirmed service windows can be canceled up to 36 hours in advance.</span></div></div></aside>
+  </section>
+</section></main>
+<footer class="site-footer"><div class="footer-wrap">© 2026 Junkyard Dawgs LLC • Request service window</div></footer>
+<script src="script.js"></script>
+</body>
+</html>
