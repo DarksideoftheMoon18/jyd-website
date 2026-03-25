@@ -6,141 +6,357 @@
   <title>Junkyard Dawgs LLC | Twin Cities Junk Removal</title>
   <meta name="description" content="Professional junk removal and cleanouts across the Twin Cities with clear pricing, respectful service, and no surprises." />
   <style>
-    :root{
-      --bg:#0f1115;
-      --surface:#171a21;
-      --surface-2:#1f2430;
-      --card:#ffffff;
-      --text:#101418;
-      --text-light:#f5f7fb;
-      --muted:#6b7280;
-      --muted-light:#c7ced9;
-      --border:#e5e7eb;
-      --accent:#0f8b8d;
-      --accent-dark:#0b6667;
-      --success:#15803d;
-      --danger:#991b1b;
-      --priority:#facc15;
-      --priority-dark:#eab308;
-      --shadow:0 14px 34px rgba(16,20,24,.12);
-      --radius-lg:22px;
-      --radius-md:16px;
-      --radius-sm:12px;
-      --max:1180px;
+    :root {
+      --ink-900: #081225;
+      --ink-800: #0f1d35;
+      --ink-700: #1e355d;
+      --ink-100: #eef4ff;
+      --surface: #f5f8ff;
+      --white: #ffffff;
+      --text-900: #131c2f;
+      --text-700: #2f3e5a;
+      --text-600: #5a6987;
+      --text-500: #71809f;
+      --border: #d9e3f7;
+      --border-soft: #eaf0fc;
+      --brand: #1b5cff;
+      --brand-strong: #1146cb;
+      --brand-soft: #e8f0ff;
+      --gold: #ffcf5b;
+      --success: #168756;
+      --danger: #bb2637;
+      --shadow-lg: 0 24px 50px rgba(11, 23, 46, 0.16);
+      --shadow-md: 0 16px 36px rgba(11, 23, 46, 0.1);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#f5f7fa;line-height:1.55}
-    img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(var(--max),calc(100% - 2rem));margin:0 auto}
-    .section{padding:4.5rem 0}
-    .section-header{max-width:760px;margin-bottom:2rem}
-    .eyebrow{display:inline-block;margin-bottom:.85rem;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-    h1,h2,h3{margin:0 0 .85rem;line-height:1.1}
-    h1{font-size:clamp(2.5rem,6vw,4.8rem);letter-spacing:-.03em}
-    h2{font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.02em}
-    h3{font-size:1.25rem}
-    p{margin:0 0 1rem}
-    .lead{font-size:1.08rem;color:#4b5563}
-    .site-header{position:relative;background:rgba(15,17,21,.96);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav-wrap{min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0}
-    .brand{display:flex;align-items:center;gap:1rem;color:var(--text-light);font-weight:700}
-    .brand-logo{width:74px;height:74px;border-radius:18px;object-fit:cover;background:#111827;border:1px solid rgba(255,255,255,.12)}
-    .brand-text{display:flex;flex-direction:column;line-height:1.12}
-    .brand-text span:first-child{font-size:1.08rem}
-    .brand-text span:last-child{font-size:.92rem;font-weight:500;color:var(--muted-light)}
-    .nav-links{display:flex;align-items:center;gap:1.15rem;flex-wrap:wrap}
-    .nav-links a{color:var(--text-light);font-size:.95rem;opacity:.94;font-weight:600}
-    .nav-links a:hover{opacity:1}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.95rem 1.35rem;border-radius:999px;font-weight:700;border:none;cursor:pointer;transition:.2s ease;text-align:center}
-    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 20px rgba(15,139,141,.24)}
-    .btn-primary:hover{background:var(--accent-dark)}
-    .btn-priority{background:var(--priority);color:#111827;box-shadow:0 10px 20px rgba(250,204,21,.26)}
-    .btn-priority:hover{background:var(--priority-dark)}
-    .btn-light{background:#fff;color:var(--text);border:1px solid var(--border)}
-    .hero{
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      color: var(--text-900);
+      background: linear-gradient(180deg, #f7faff 0%, #f1f6ff 100%);
+      line-height: 1.55;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { margin: 0 0 .75rem; line-height: 1.08; }
+    p { margin: 0 0 1rem; }
+
+    .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+    .section { padding: 5rem 0; }
+    .section-tight { padding: 3.6rem 0; }
+    .section-header { max-width: 760px; margin-bottom: 2rem; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-bottom: .9rem;
+      padding: .35rem .75rem;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--ink-700);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.8rem); letter-spacing: -.03em; }
+    h2 { font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: -.025em; }
+    h3 { font-size: 1.2rem; }
+    .lead { color: var(--text-700); font-size: 1.07rem; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(8, 18, 37, 0.9);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .nav-wrap {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .8rem 0;
+    }
+    .brand { display: flex; align-items: center; gap: .85rem; color: #fff; }
+    .brand-logo {
+      width: 62px;
+      height: 62px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      object-fit: cover;
+      background: #0f172a;
+    }
+    .brand-text { display: grid; gap: .15rem; }
+    .brand-text span:first-child { font-weight: 700; font-size: 1rem; }
+    .brand-text span:last-child { color: #bdcae5; font-size: .88rem; }
+    .nav-links { display: flex; align-items: center; gap: 1.1rem; color: #e9f0ff; }
+    .nav-links a { font-weight: 600; font-size: .92rem; opacity: .95; }
+    .nav-links a:hover { opacity: 1; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: .95rem 1.35rem;
+      border-radius: 999px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+      text-align: center;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #2b69ff 0%, #1f5ff9 40%, #1852df 100%);
+      color: #fff;
+      box-shadow: 0 16px 28px rgba(24, 82, 223, 0.3);
+    }
+    .btn-primary:hover { transform: translateY(-1px); }
+    .btn-priority {
+      background: linear-gradient(135deg, #ffe18f, #ffcf5b);
+      color: #312100;
+      box-shadow: 0 12px 24px rgba(255, 207, 91, 0.34);
+    }
+    .btn-light {
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text-900);
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
       background:
-        linear-gradient(rgba(15,17,21,.72),rgba(15,17,21,.84)),
-        url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-      color:#fff;
-      padding:5.6rem 0 4.7rem;
+        radial-gradient(1200px 450px at 92% 0%, rgba(94, 149, 255, 0.3), transparent 70%),
+        linear-gradient(145deg, #081225 0%, #0f2447 58%, #0f2f61 100%);
+      color: #fff;
+      padding: 6rem 0 5.2rem;
     }
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
-    .hero p{color:#e5e7eb;max-width:650px}
-    .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin:1.6rem 0 1rem}
-    .trust-line{font-weight:700;color:#f5f7fb;margin-bottom:0}
-    .hero-card{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.1);
-      border-radius:26px;
-      padding:1.2rem;
-      backdrop-filter:blur(8px);
-      box-shadow:0 20px 40px rgba(0,0,0,.18)
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 2rem; align-items: center; }
+    .hero p { color: #d3e0fb; }
+    .hero-copy { max-width: 680px; }
+    .hero-trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .8rem;
+      margin: 1.4rem 0 1.8rem;
     }
-    .hero-card img{width:100%;height:380px;object-fit:cover;border-radius:18px}
-    .hero-card-note{margin-top:1rem;color:#dbe3ee;font-size:.95rem}
-    .grid-3,.grid-4,.grid-2{display:grid;gap:1.25rem}
-    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.35rem;box-shadow:var(--shadow)}
-    .image-card{overflow:hidden;padding:0;display:flex;flex-direction:column;min-height:100%}
-    .image-card img{width:100%;height:230px;object-fit:cover}
-    .image-card-content{padding:1.15rem 1.15rem 1.3rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
-    .service-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.4rem}
-    .service-list a.card{transition:transform .2s ease, box-shadow .2s ease}
-    .service-list a.card:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(16,20,24,.16)}
-    .learn-more{display:inline-flex;align-items:center;gap:.35rem;color:var(--accent);font-weight:700;margin-top:auto}
-    .take-wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
-    .soft-card{background:#fbfcfe;border-color:#e8edf3;box-shadow:0 10px 24px rgba(16,20,24,.07)}
-    .check-list,.x-list,.steps-list{list-style:none;padding:0;margin:0}
-    .check-list li,.x-list li{display:flex;gap:.8rem;align-items:flex-start;padding:.8rem 0;border-bottom:1px solid #eef2f7}
-    .check-list li:last-child,.x-list li:last-child{border-bottom:none}
-    .check{color:var(--success);font-weight:800;min-width:20px}
-    .xmark{color:var(--danger);font-weight:800;min-width:20px}
-    .helper-line{margin-top:1rem;color:var(--muted);font-size:.98rem}
-    .steps-list{display:grid;gap:1rem;margin-top:1.25rem}
-    .steps-list li{display:grid;grid-template-columns:54px 1fr;gap:1rem;align-items:start;padding:1rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow)}
-    .step-num{width:54px;height:54px;border-radius:50%;background:#eef8f8;color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:1rem}
-    .pricing-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
-    .pricing-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.35rem;box-shadow:var(--shadow);min-height:100%}
-    .pricing-card .price{display:block;font-size:1.55rem;font-weight:700;margin:.65rem 0 .8rem;color:var(--text)}
-    .pricing-reassurance{margin-top:1rem;color:#374151;font-weight:600}
-    .before-after-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
-    .before-after-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
-    .before-after-images{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;padding:.35rem;background:#e5e7eb}
-    .before-after-images img{height:185px;object-fit:cover;border-radius:14px}
-    .ba-labels{display:flex;justify-content:space-between;padding:0 1rem 1rem;font-size:.9rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-    .testimonials{background:#f0f4f8}
-    .testimonial-grid-empty{min-height:18px}
-    .final-cta{background:linear-gradient(135deg,#0f1115,#1b2330);color:#fff;border-radius:28px;padding:2rem;box-shadow:0 20px 40px rgba(15,17,21,.18)}
-    .final-cta p{color:#d4dbe5;max-width:780px}
-    .final-cta-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.5rem}
-    .contact-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow)}
-    .contact-lines{display:grid;gap:.8rem;margin-top:1rem;color:#374151}
-    .footer{background:var(--bg);color:#fff;padding:2.5rem 0;margin-top:2rem}
-    .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:1.25rem;align-items:start}
-    .footer-brand{display:flex;align-items:center;gap:.9rem}
-    .footer-brand img{width:58px;height:58px;border-radius:14px}
-    .footer p,.footer a,.footer span{color:#d6deea}
-    .footer-links{display:grid;gap:.55rem}
-    .small{font-size:.92rem;color:var(--muted)}
-    @media (max-width:980px){
-      .hero-grid,.grid-3,.grid-4,.grid-2,.service-list,.pricing-grid,.before-after-grid,.take-wrap,.footer-grid{grid-template-columns:1fr 1fr}
-      .hero-card img{height:320px}
+    .trust-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: .8rem;
+      text-align: center;
+      font-size: .88rem;
+      font-weight: 700;
+      color: #eaf1ff;
     }
-    @media (max-width:720px){
-      .nav-wrap{flex-direction:column;align-items:flex-start;padding:.9rem 0}
-      .nav-links{width:100%}
-      .hero{padding-top:4.6rem}
-      .hero-grid,.grid-3,.grid-4,.grid-2,.service-list,.pricing-grid,.before-after-grid,.take-wrap,.footer-grid{grid-template-columns:1fr}
-      .hero-card img{height:260px}
-      .steps-list li{grid-template-columns:1fr}
-      .step-num{width:46px;height:46px}
-      .final-cta{padding:1.4rem}
-      .section{padding:3.4rem 0}
-      .before-after-images img{height:160px}
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+    .hero-note { margin-top: .9rem; font-size: .92rem; color: #c6d8fe; }
+
+    .hero-panel {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-xl);
+      padding: 1rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-panel img { width: 100%; height: 360px; border-radius: 18px; object-fit: cover; }
+    .hero-panel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .65rem;
+      margin-top: .7rem;
+    }
+    .hero-stat {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: .65rem;
+      text-align: center;
+    }
+    .hero-stat strong { display: block; font-size: 1.1rem; }
+    .hero-stat span { font-size: .78rem; color: #dbe8ff; }
+
+    .trust-strip {
+      margin-top: -1.8rem;
+      position: relative;
+      z-index: 2;
+    }
+    .trust-shell {
+      background: #fff;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-xl);
+      padding: 1.1rem 1.3rem;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .8rem;
+    }
+    .trust-item {
+      border-right: 1px solid var(--border-soft);
+      padding-right: .8rem;
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-item strong { display: block; font-size: 1rem; margin-bottom: .2rem; }
+    .trust-item span { color: var(--text-600); font-size: .9rem; }
+
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 1rem; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: 0 10px 22px rgba(20, 37, 73, 0.06);
+    }
+    .image-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+    .image-card img { width: 100%; height: 220px; object-fit: cover; }
+    .image-card-content { padding: 1.2rem; display: flex; flex-direction: column; gap: .4rem; flex: 1; }
+    .learn-more { margin-top: auto; color: var(--brand-strong); font-weight: 700; }
+
+    .benefit-card {
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--border-soft);
+    }
+
+    .check-list, .x-list, .steps-list { list-style: none; padding: 0; margin: 0; }
+    .check-list li, .x-list li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .check-list li:last-child, .x-list li:last-child { border-bottom: none; }
+    .check { color: var(--success); font-weight: 800; }
+    .xmark { color: var(--danger); font-weight: 800; }
+    .helper-line { margin-top: 1rem; color: var(--text-600); }
+
+    .process-shell {
+      background: linear-gradient(180deg, #ffffff, #f4f8ff);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-xl);
+      padding: 1.4rem;
+    }
+    .steps-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
+    .steps-list li {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: .85rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: .95rem;
+    }
+    .step-num {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(180deg, #3774ff, #1d57df);
+    }
+
+    .pricing-card .price { display: block; margin: .5rem 0 .7rem; font-size: 1.45rem; font-weight: 800; }
+    .pricing-reassurance { font-weight: 700; color: var(--ink-700); }
+
+    .before-after-card { padding: 0; overflow: hidden; }
+    .before-after-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .35rem;
+      padding: .35rem;
+      background: #e5edfb;
+    }
+    .before-after-images img { height: 180px; object-fit: cover; border-radius: 10px; }
+    .ba-labels {
+      display: flex;
+      justify-content: space-between;
+      padding: .8rem 1rem 1rem;
+      color: var(--text-600);
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-weight: 800;
+    }
+
+    .testimonial-shell {
+      background: #eff5ff;
+      border: 1px solid #d5e3ff;
+      border-radius: var(--radius-lg);
+      min-height: 52px;
+    }
+
+    .final-cta {
+      background: linear-gradient(135deg, #0b1d39 0%, #12366d 58%, #1550a8 100%);
+      border-radius: var(--radius-xl);
+      color: #fff;
+      padding: 2.2rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .final-cta p { color: #d5e4ff; max-width: 760px; }
+    .final-cta-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.4rem; }
+
+    .contact-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.35rem;
+      box-shadow: 0 12px 24px rgba(20, 37, 73, 0.08);
+    }
+    .contact-lines { display: grid; gap: .75rem; margin-top: .9rem; color: var(--text-700); }
+
+    .footer {
+      margin-top: 2.4rem;
+      background: linear-gradient(160deg, #081225, #0f2040);
+      color: #fff;
+      padding: 2.6rem 0;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1.2rem; }
+    .footer-brand { display: flex; align-items: center; gap: .75rem; }
+    .footer-brand img { width: 58px; height: 58px; border-radius: 12px; }
+    .footer p, .footer a, .footer span { color: #d4def4; }
+    .footer-links { display: grid; gap: .45rem; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .grid-4, .grid-3, .grid-2, .footer-grid, .steps-list { grid-template-columns: 1fr 1fr; }
+      .trust-shell { grid-template-columns: 1fr 1fr; }
+      .trust-item:nth-child(2) { border-right: none; }
+    }
+    @media (max-width: 760px) {
+      .nav-wrap { flex-direction: column; align-items: flex-start; }
+      .nav-links { flex-wrap: wrap; }
+      .hero-grid, .grid-4, .grid-3, .grid-2, .footer-grid, .steps-list, .trust-shell, .hero-trust-row { grid-template-columns: 1fr; }
+      .hero-panel img { height: 250px; }
+      .trust-item { border-right: none; border-bottom: 1px solid var(--border-soft); padding-bottom: .75rem; }
+      .trust-item:last-child { border-bottom: none; }
+      .steps-list li { grid-template-columns: 1fr; }
+      .step-num { width: 44px; height: 44px; }
+      .section { padding: 3.8rem 0; }
+      .final-cta { padding: 1.4rem; }
     }
   </style>
 </head>
@@ -166,19 +382,54 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <span class="eyebrow" style="color:#9de8e8;">Twin Cities Junk Removal</span>
-          <h1>Clutter Happens.<br />We Handle It.</h1>
-          <p class="lead">Fast, reliable junk removal with upfront pricing and no surprises.</p>
-          <p class="trust-line">Serving Twin Cities homeowners, landlords, and property managers</p>
+        <div class="hero-copy">
+          <span class="eyebrow" style="background:rgba(255,255,255,.12); color:#d8e5ff;">Twin Cities Junk Removal</span>
+          <h1>Heavy-Duty Cleanup.<br />Professional Start to Finish.</h1>
+          <p class="lead">Fast junk removal and cleanouts for homeowners, landlords, and property managers who want the job handled right, on schedule, and without chaos.</p>
+
+          <div class="hero-trust-row">
+            <div class="trust-pill">Upfront quote clarity</div>
+            <div class="trust-pill">Professional crew standards</div>
+            <div class="trust-pill">Local Twin Cities service</div>
+          </div>
+
           <div class="hero-actions">
             <a href="intake.html" class="btn btn-primary">Get Your Quote</a>
             <a href="#priority-list" class="btn btn-priority">Join the Priority List</a>
           </div>
+          <p class="hero-note">Trusted by residential customers and repeat property partners across the metro.</p>
         </div>
-        <div class="hero-card">
+
+        <aside class="hero-panel" aria-label="Service snapshot">
           <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80" alt="Temporary junk removal placeholder showing work truck and cleanup activity" />
-          <p class="hero-card-note">Temporary junk-removal image placeholder. Final image sourcing will be completed in a separate pass.</p>
+          <div class="hero-panel-grid">
+            <div class="hero-stat"><strong>Rapid</strong><span>Quote workflow</span></div>
+            <div class="hero-stat"><strong>Clear</strong><span>Pricing process</span></div>
+            <div class="hero-stat"><strong>Reliable</strong><span>Service windows</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trust-strip section-tight">
+      <div class="container">
+        <div class="trust-shell">
+          <article class="trust-item">
+            <strong>Transparent pricing model</strong>
+            <span>Pricing reflects load size, access, material type, and conditions.</span>
+          </article>
+          <article class="trust-item">
+            <strong>No hidden add-ons</strong>
+            <span>Special handling factors are reviewed in the quote process.</span>
+          </article>
+          <article class="trust-item">
+            <strong>Professional communication</strong>
+            <span>Clear updates from request through completed removal.</span>
+          </article>
+          <article class="trust-item">
+            <strong>Built for repeat reliability</strong>
+            <span>Ideal for homeowners and ongoing service partners.</span>
+          </article>
         </div>
       </div>
     </section>
@@ -186,32 +437,35 @@
     <section class="section" id="services">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Services</span>
-          <h2>Professional junk removal and cleanouts for homes, properties, and ongoing service relationships.</h2>
-          <p class="lead">Built for customers who want the job done right the first time.</p>
+          <span class="eyebrow">Core Services</span>
+          <h2>High-accountability removal and cleanout services built for speed, safety, and follow-through.</h2>
+          <p class="lead">Designed for customers who value a clean process, strong communication, and consistent results.</p>
         </div>
-        <div class="service-list">
+
+        <div class="grid-3">
           <a class="card image-card" href="intake.html">
             <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Temporary residential junk removal placeholder" />
             <div class="image-card-content">
               <h3>Residential Junk Removal</h3>
-              <p>Furniture, appliances, mattresses, and general household junk handled with a clean process from start to finish.</p>
+              <p>Furniture, appliances, mattresses, and general household junk removed with a respectful, organized workflow.</p>
               <span class="learn-more">Learn more →</span>
             </div>
           </a>
+
           <a class="card image-card" href="intake.html">
             <img src="https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?auto=format&fit=crop&w=1200&q=80" alt="Temporary property cleanout placeholder" />
             <div class="image-card-content">
               <h3>Property Cleanouts</h3>
-              <p>Garage, basement, storage unit, turnover, and transition cleanout support for fast-moving situations.</p>
+              <p>Garage, basement, turnover, and transition cleanouts for fast-moving timelines and complex spaces.</p>
               <span class="learn-more">Learn more →</span>
             </div>
           </a>
+
           <a class="card image-card" href="partner-intake.html">
             <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Temporary ongoing service partnership placeholder" />
             <div class="image-card-content">
               <h3>Ongoing Service Partnerships</h3>
-              <p>Professional support for property managers, landlords, realtors, and repeat partners who need dependable service.</p>
+              <p>Reliable support for property managers, landlords, realtors, and repeat partners who need consistency.</p>
               <span class="learn-more">Partner Request →</span>
             </div>
           </a>
@@ -222,101 +476,97 @@
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">What We Take / What We Don’t Take</span>
-          <h2>Simple rules. Clear expectations.</h2>
+          <span class="eyebrow">Service Standards</span>
+          <h2>Why customers choose Junkyard Dawgs when clean execution matters most.</h2>
         </div>
-        <div class="take-wrap">
-          <article class="card soft-card">
-            <h3>What We Take</h3>
-            <ul class="check-list">
-              <li><span class="check">✓</span><span>Furniture</span></li>
-              <li><span class="check">✓</span><span>Appliances</span></li>
-              <li><span class="check">✓</span><span>Mattresses</span></li>
-              <li><span class="check">✓</span><span>Garage clutter</span></li>
-              <li><span class="check">✓</span><span>Household junk</span></li>
-              <li><span class="check">✓</span><span>Cleanout debris</span></li>
-              <li><span class="check">✓</span><span>Storage unit contents</span></li>
-              <li><span class="check">✓</span><span>Light yard items</span></li>
-            </ul>
+        <div class="grid-4">
+          <article class="card benefit-card">
+            <h3>Clear Pricing</h3>
+            <p>Pricing is based on load size, access, material type, and job conditions.</p>
           </article>
-          <article class="card soft-card">
-            <h3>What We Don’t Take</h3>
-            <ul class="x-list">
-              <li><span class="xmark">✕</span><span>Hazardous chemicals</span></li>
-              <li><span class="xmark">✕</span><span>Wet paint</span></li>
-              <li><span class="xmark">✕</span><span>Asbestos</span></li>
-              <li><span class="xmark">✕</span><span>Biohazard waste</span></li>
-              <li><span class="xmark">✕</span><span>Regulated medical waste</span></li>
-            </ul>
+          <article class="card benefit-card">
+            <h3>No Surprise Fees</h3>
+            <p>Stairs, long carry distance, heavy items, and special handling are reviewed during quoting.</p>
+          </article>
+          <article class="card benefit-card">
+            <h3>Confirmed Scheduling</h3>
+            <p>Lock in your preferred service window with a deposit during the intake process.</p>
+          </article>
+          <article class="card benefit-card">
+            <h3>Twin Cities Focused</h3>
+            <p>Local service with professional communication and dependable follow-through.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <article class="card">
+          <h3>What We Take</h3>
+          <ul class="check-list">
+            <li><span class="check">✓</span><span>Furniture</span></li>
+            <li><span class="check">✓</span><span>Appliances</span></li>
+            <li><span class="check">✓</span><span>Mattresses</span></li>
+            <li><span class="check">✓</span><span>Garage clutter</span></li>
+            <li><span class="check">✓</span><span>Household junk</span></li>
+            <li><span class="check">✓</span><span>Cleanout debris</span></li>
+            <li><span class="check">✓</span><span>Storage unit contents</span></li>
+            <li><span class="check">✓</span><span>Light yard items</span></li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>What We Don’t Take</h3>
+          <ul class="x-list">
+            <li><span class="xmark">✕</span><span>Hazardous chemicals</span></li>
+            <li><span class="xmark">✕</span><span>Wet paint</span></li>
+            <li><span class="xmark">✕</span><span>Asbestos</span></li>
+            <li><span class="xmark">✕</span><span>Biohazard waste</span></li>
+            <li><span class="xmark">✕</span><span>Regulated medical waste</span></li>
+          </ul>
+        </article>
+      </div>
+      <div class="container">
         <p class="helper-line">Not sure about an item? Include it in your request and we’ll confirm.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
+      <div class="container process-shell">
         <div class="section-header">
           <span class="eyebrow">How It Works</span>
-          <h2>Clear process. Professional follow-through.</h2>
+          <h2>Simple steps, professional execution, no guesswork.</h2>
         </div>
         <ol class="steps-list">
           <li>
             <div class="step-num">1</div>
             <div>
               <h3>Send your job details</h3>
-              <p>Share the items, access conditions, and job information so the quote starts from the right details.</p>
+              <p>Share items, access conditions, and job specifics for an accurate starting quote.</p>
             </div>
           </li>
           <li>
             <div class="step-num">2</div>
             <div>
               <h3>Review your quote</h3>
-              <p>See the estimated price clearly before moving into the next step.</p>
+              <p>See your estimated pricing clearly before moving into scheduling.</p>
             </div>
           </li>
           <li>
             <div class="step-num">3</div>
             <div>
               <h3>Pick your service window</h3>
-              <p>Choose the service window that works best for your schedule.</p>
+              <p>Choose a service window that fits your timeline and access needs.</p>
             </div>
           </li>
           <li>
             <div class="step-num">4</div>
             <div>
               <h3>Problem Solved</h3>
-              <p>Your junk is handled and the space is back under control.</p>
+              <p>Your junk is removed and your space is back under control.</p>
             </div>
           </li>
         </ol>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Why Choose Junkyard Dawgs</span>
-          <h2>Hard-working crews. Professional service. Clear pricing.</h2>
-        </div>
-        <div class="grid-4">
-          <article class="card">
-            <h3>Clear Pricing</h3>
-            <p>Pricing is based on load size, access, material type, and job conditions.</p>
-          </article>
-          <article class="card">
-            <h3>No Surprise Fees</h3>
-            <p>Stairs, long carry distance, heavy items, and special handling are reviewed during the quote process.</p>
-          </article>
-          <article class="card">
-            <h3>Confirmed Scheduling</h3>
-            <p>Lock in your preferred service window with a deposit during the intake process.</p>
-          </article>
-          <article class="card">
-            <h3>Twin Cities Focused</h3>
-            <p>Built for reliable local service with professional communication and a clean process from start to finish.</p>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -328,23 +578,23 @@
           <p class="lead">Final pricing depends on load size, material type, stairs, carry distance, and any special handling required.</p>
           <p class="pricing-reassurance">You’ll see your estimated price before confirming your job.</p>
         </div>
-        <div class="pricing-grid">
-          <article class="pricing-card">
+        <div class="grid-4">
+          <article class="card pricing-card">
             <h3>Minimum Service</h3>
             <span class="price">$175</span>
             <p>Minimum includes removal of one bulky item or equivalent small load.</p>
           </article>
-          <article class="pricing-card">
+          <article class="card pricing-card">
             <h3>Labor Adjustments</h3>
             <span class="price">Quote-Based Adjustment</span>
             <p>Long carry distances of 75 feet or more may affect pricing and are reviewed during the quote process.</p>
           </article>
-          <article class="pricing-card">
+          <article class="card pricing-card">
             <h3>Heavy Items</h3>
             <span class="price">Special Handling</span>
             <p>Concrete, dirt, roofing, tile, and other dense materials require special handling.</p>
           </article>
-          <article class="pricing-card">
+          <article class="card pricing-card">
             <h3>Service Area &amp; Travel</h3>
             <span class="price">30–50+ Miles</span>
             <p>30-mile service area included. 30–50 miles with travel adjustment. 50+ miles by approval.</p>
@@ -359,22 +609,22 @@
           <span class="eyebrow">Before / After Results</span>
           <h2>Before-and-after examples from junk removal and cleanout work.</h2>
         </div>
-        <div class="before-after-grid">
-          <article class="before-after-card">
+        <div class="grid-3">
+          <article class="card before-after-card">
             <div class="before-after-images">
               <img src="https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?auto=format&fit=crop&w=900&q=80" alt="Temporary before placeholder for garage junk removal" />
               <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80" alt="Temporary after placeholder for garage junk removal" />
             </div>
             <div class="ba-labels"><span>Before</span><span>After</span></div>
           </article>
-          <article class="before-after-card">
+          <article class="card before-after-card">
             <div class="before-after-images">
               <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Temporary before placeholder for basement cleanout" />
               <img src="https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?auto=format&fit=crop&w=900&q=80" alt="Temporary after placeholder for basement cleanout" />
             </div>
             <div class="ba-labels"><span>Before</span><span>After</span></div>
           </article>
-          <article class="before-after-card">
+          <article class="card before-after-card">
             <div class="before-after-images">
               <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=900&q=80" alt="Temporary before placeholder for property cleanout" />
               <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="Temporary after placeholder for property cleanout" />
@@ -385,13 +635,13 @@
       </div>
     </section>
 
-    <section class="section testimonials">
+    <section class="section">
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">Testimonials</span>
           <h2>What Customers Are Saying</h2>
         </div>
-        <div class="grid-3 testimonial-grid-empty"></div>
+        <div class="testimonial-shell"></div>
       </div>
     </section>
 
