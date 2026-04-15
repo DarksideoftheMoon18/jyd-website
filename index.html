@@ -3,714 +3,741 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Junkyard Dawgs LLC | Twin Cities Junk Removal</title>
-  <meta name="description" content="Professional junk removal and cleanouts across the Twin Cities with clear pricing, respectful service, and no surprises." />
+  <title>Junkyard Dawgs LLC | Twin Cities Junk Removal, Dumpster Rentals & Demolition</title>
+  <meta name="description" content="Professional junk removal, dumpster rentals, and demolition across the Twin Cities. Fast estimates, clear pricing, no surprises." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink-900: #081225;
-      --ink-800: #0f1d35;
-      --ink-700: #1e355d;
-      --ink-100: #eef4ff;
-      --surface: #f5f8ff;
-      --white: #ffffff;
-      --text-900: #131c2f;
-      --text-700: #2f3e5a;
-      --text-600: #5a6987;
-      --text-500: #71809f;
-      --border: #d9e3f7;
-      --border-soft: #eaf0fc;
-      --brand: #1b5cff;
-      --brand-strong: #1146cb;
-      --brand-soft: #e8f0ff;
-      --gold: #ffcf5b;
-      --success: #168756;
-      --danger: #bb2637;
-      --shadow-lg: 0 24px 50px rgba(11, 23, 46, 0.16);
-      --shadow-md: 0 16px 36px rgba(11, 23, 46, 0.1);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --max: 1180px;
+      --bg:         #161a16;
+      --bg-mid:     #1c211c;
+      --bg-card:    #202520;
+      --bg-dark:    #111411;
+      --bg-deeper:  #0d100d;
+      --green:      #4a6b3f;
+      --green-hi:   #5c8550;
+      --green-glow: rgba(74,107,63,0.45);
+      --green-soft: rgba(74,107,63,0.15);
+      --green-dim:  #344e2b;
+      --silver:     #d0d4cc;
+      --muted:      #9aa094;
+      --dim:        #5a6055;
+      --white:      #f4f7f2;
+      --border:     rgba(255,255,255,0.07);
+      --border-g:   rgba(92,133,80,0.3);
+      --border-gc:  rgba(92,133,80,0.5);
+      --max:        1200px;
+      --radius:     8px;
+      --radius-lg:  14px;
+      --font-head:  'Barlow Condensed', 'Segoe UI', system-ui, sans-serif;
+      --font-body:  'Barlow', 'Segoe UI', system-ui, sans-serif;
+      --shadow-card: 0 8px 32px rgba(0,0,0,0.45);
+      --shadow-btn:  0 4px 20px rgba(74,107,63,0.55);
     }
 
-    * { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    main[id], section[id] { scroll-margin-top: 104px; }
     body {
-      margin: 0;
-      font-family: "Inter", "Segoe UI", Arial, sans-serif;
-      color: var(--text-900);
-      background: linear-gradient(180deg, #f7faff 0%, #f1f6ff 100%);
-      line-height: 1.55;
+      font-family: var(--font-body);
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(74,107,63,0.12) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      color: var(--white);
+      line-height: 1.58;
+      -webkit-font-smoothing: antialiased;
     }
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
-    h1, h2, h3 { margin: 0 0 .75rem; line-height: 1.08; }
-    p { margin: 0 0 1rem; }
+    .wrap { width: min(var(--max), calc(100% - 2.5rem)); margin: 0 auto; }
 
-    .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
-    .section { padding: 5rem 0; }
-    .section-tight { padding: 3.6rem 0; }
-    .section-header { max-width: 760px; margin-bottom: 2rem; }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      margin-bottom: .9rem;
-      padding: .35rem .75rem;
-      border-radius: 999px;
-      background: var(--brand-soft);
-      color: var(--ink-700);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--brand);
-    }
-    h1 { font-size: clamp(2.5rem, 6vw, 4.8rem); letter-spacing: -.03em; }
-    h2 { font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: -.025em; }
-    h3 { font-size: 1.2rem; }
-    .lead { color: var(--text-700); font-size: 1.07rem; }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(8, 18, 37, 0.9);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
-    .nav-wrap {
-      min-height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: .8rem 0;
-    }
-    .brand { display: flex; align-items: center; gap: .85rem; color: #fff; }
-    .brand-logo {
-      width: 62px;
-      height: 62px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      object-fit: cover;
-      background: #0f172a;
-    }
-    .brand-text { display: grid; gap: .15rem; }
-    .brand-text span:first-child { font-weight: 700; font-size: 1rem; }
-    .brand-text span:last-child { color: #bdcae5; font-size: .88rem; }
-    .nav-links { display: flex; align-items: center; gap: 1.1rem; color: #e9f0ff; }
-    .nav-links a { font-weight: 600; font-size: .92rem; opacity: .95; }
-    .nav-links a:hover { opacity: 1; }
-
+    /* ═══════════════════════════════════════
+       BUTTONS — premium gradient + glow
+    ═══════════════════════════════════════ */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: .95rem 1.35rem;
-      border-radius: 999px;
-      border: none;
-      font-weight: 700;
-      cursor: pointer;
-      transition: .2s ease;
-      text-align: center;
+      display: inline-flex; align-items: center; gap: .55rem;
+      font-family: var(--font-head); font-weight: 800; font-size: .95rem;
+      letter-spacing: .07em; text-transform: uppercase;
+      padding: .82rem 1.7rem; border-radius: var(--radius);
+      border: none; cursor: pointer; position: relative;
+      transition: all .22s ease; white-space: nowrap;
     }
     .btn-primary {
-      background: linear-gradient(135deg, #2b69ff 0%, #1f5ff9 40%, #1852df 100%);
-      color: #fff;
-      box-shadow: 0 16px 28px rgba(24, 82, 223, 0.3);
+      background: linear-gradient(145deg, #5c8550 0%, #4a6b3f 55%, #3a5633 100%);
+      color: var(--white);
+      box-shadow: var(--shadow-btn), inset 0 1px 0 rgba(255,255,255,0.12);
+      border: 1px solid rgba(92,133,80,0.4);
     }
-    .btn-primary:hover { transform: translateY(-1px); }
-    .btn-priority {
-      background: linear-gradient(135deg, #ffe18f, #ffcf5b);
-      color: #312100;
-      box-shadow: 0 12px 24px rgba(255, 207, 91, 0.34);
+    .btn-primary:hover {
+      background: linear-gradient(145deg, #6a9a5c 0%, #567a4c 55%, #446040 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(74,107,63,0.65), inset 0 1px 0 rgba(255,255,255,0.18);
     }
-    .btn-light {
-      background: #fff;
-      border: 1px solid var(--border);
-      color: var(--text-900);
+    .btn-primary:active { transform: translateY(0); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.28);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
     }
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-1px);
+    }
+    .btn-dark {
+      background: rgba(0,0,0,0.5);
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.22);
+    }
+    .btn-dark:hover { background: rgba(0,0,0,0.7); border-color: rgba(255,255,255,0.45); }
+    .btn-sm { padding: .6rem 1.25rem; font-size: .82rem; }
 
-    .hero {
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
+    /* ═══════════════════════════════════════
+       TOP BAR
+    ═══════════════════════════════════════ */
+    .topbar {
+      background: var(--bg-deeper);
+      border-bottom: 1px solid var(--border);
+      padding: .5rem 0;
+    }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .topbar-social { display: flex; gap: .55rem; }
+    .topbar-social a {
+      width: 30px; height: 30px; border-radius: 5px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); transition: .18s;
+    }
+    .topbar-social a:hover { background: var(--green); color: var(--white); border-color: var(--green-hi); }
+    .topbar-social svg { width: 14px; height: 14px; fill: currentColor; }
+    .topbar-phone { font-family: var(--font-head); font-weight: 700; font-size: .92rem; color: var(--silver); letter-spacing: .04em; }
+    .topbar-phone a { color: inherit; transition: color .15s; }
+    .topbar-phone a:hover { color: var(--white); }
+
+    /* ═══════════════════════════════════════
+       MAIN HEADER
+    ═══════════════════════════════════════ */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(22,26,22,0.92);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(92,133,80,0.18);
+      box-shadow: 0 2px 30px rgba(0,0,0,0.6);
+    }
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: .6rem 0; }
+    .brand-logo { height: 70px; width: auto; display: block; filter: drop-shadow(0 2px 12px rgba(92,133,80,0.35)); }
+    .nav-links { display: flex; align-items: center; gap: .05rem; }
+    .nav-links a {
+      font-family: var(--font-head); font-weight: 700; font-size: .98rem;
+      letter-spacing: .06em; text-transform: uppercase; color: var(--silver);
+      padding: .55rem 1rem; border-radius: var(--radius); transition: .15s;
+    }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.06); }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero { position: relative; overflow: hidden; min-height: 88vh; display: flex; align-items: center; }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('assets/images/hero/hero.jpg') center center / cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
       background:
-        radial-gradient(1200px 450px at 92% 0%, rgba(94, 149, 255, 0.3), transparent 70%),
-        linear-gradient(145deg, #081225 0%, #0f2447 58%, #0f2f61 100%);
-      color: #fff;
-      padding: 6rem 0 5.2rem;
+        linear-gradient(110deg,
+          rgba(13,16,13,1.0)  0%,
+          rgba(13,16,13,0.97) 32%,
+          rgba(13,16,13,0.72) 55%,
+          rgba(13,16,13,0.25) 75%,
+          rgba(13,16,13,0.1)  100%
+        ),
+        linear-gradient(180deg, rgba(0,0,0,0.35) 0%, transparent 40%, rgba(0,0,0,0.2) 100%);
     }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 2rem; align-items: center; }
-    .hero p { color: #d3e0fb; }
-    .hero-copy { max-width: 680px; }
-    .hero-trust-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: .8rem;
-      margin: 1.4rem 0 1.8rem;
+    /* Green ambient glow on left */
+    .hero-overlay::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 55% 70% at 15% 60%, rgba(74,107,63,0.18) 0%, transparent 65%);
+      pointer-events: none;
     }
-    .trust-pill {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 12px;
-      padding: .8rem;
-      text-align: center;
-      font-size: .88rem;
-      font-weight: 700;
-      color: #eaf1ff;
+    .hero-inner {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1.05fr 0.95fr;
+      gap: 2rem; align-items: center;
+      width: 100%; padding: 5rem 0;
     }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
-    .hero-note { margin-top: .9rem; font-size: .92rem; color: #c6d8fe; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-family: var(--font-head); font-size: .82rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--green-hi); margin-bottom: 1.2rem;
+    }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--green-hi); flex-shrink: 0; }
+    .hero h1 {
+      font-family: var(--font-head); font-weight: 900;
+      font-size: clamp(3rem, 6.5vw, 5.4rem);
+      line-height: .98; letter-spacing: -.01em;
+      text-transform: uppercase; margin-bottom: 1.3rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .hero h1 em { font-style: normal; color: var(--green-hi); }
+    .hero-sub {
+      font-size: 1.08rem; color: #a8b0a4;
+      max-width: 510px; line-height: 1.68; margin-bottom: 2.1rem;
+    }
+    .hero-btns { display: flex; gap: .85rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .hero-trust { display: flex; align-items: center; gap: .85rem; }
+    .stars { color: #d4920a; font-size: 1.05rem; letter-spacing: .05em; text-shadow: 0 0 12px rgba(212,146,10,0.5); }
+    .hero-trust span { font-size: .86rem; color: var(--dim); }
 
-    .hero-panel {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: var(--radius-xl);
-      padding: 1rem;
-      box-shadow: var(--shadow-lg);
+    /* ═══════════════════════════════════════
+       TRUST BAR
+    ═══════════════════════════════════════ */
+    .trust-bar {
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border-g);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
     }
-    .hero-panel img { width: 100%; height: 360px; border-radius: 18px; object-fit: cover; }
-    .hero-panel-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: .65rem;
-      margin-top: .7rem;
-    }
-    .hero-stat {
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      padding: .65rem;
-      text-align: center;
-    }
-    .hero-stat strong { display: block; font-size: 1.1rem; }
-    .hero-stat span { font-size: .78rem; color: #dbe8ff; }
-
-    .trust-strip {
-      margin-top: -1.8rem;
-      position: relative;
-      z-index: 2;
-    }
-    .trust-shell {
-      background: #fff;
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-xl);
-      padding: 1.1rem 1.3rem;
-      box-shadow: var(--shadow-md);
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: .8rem;
-    }
+    .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); }
     .trust-item {
-      border-right: 1px solid var(--border-soft);
-      padding-right: .8rem;
+      display: flex; align-items: center; gap: .9rem;
+      padding: 1.3rem 1.6rem; border-right: 1px solid var(--border);
+      transition: background .2s;
     }
     .trust-item:last-child { border-right: none; }
-    .trust-item strong { display: block; font-size: 1rem; margin-bottom: .2rem; }
-    .trust-item span { color: var(--text-600); font-size: .9rem; }
-
-    .grid-4, .grid-3, .grid-2 { display: grid; gap: 1rem; }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem;
-      box-shadow: 0 10px 22px rgba(20, 37, 73, 0.06);
+    .trust-item:hover { background: rgba(92,133,80,0.06); }
+    .trust-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      border-radius: var(--radius); border: 1px solid var(--border-g);
+      background: linear-gradient(145deg, rgba(92,133,80,0.15), rgba(92,133,80,0.05));
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
-    .image-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
-    .image-card img { width: 100%; height: 220px; object-fit: cover; }
-    .image-card-content { padding: 1.2rem; display: flex; flex-direction: column; gap: .4rem; flex: 1; }
-    .learn-more { margin-top: auto; color: var(--brand-strong); font-weight: 700; }
+    .trust-icon svg { width: 20px; height: 20px; stroke: var(--green-hi); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .trust-label { font-family: var(--font-head); font-weight: 700; font-size: 1rem; letter-spacing: .02em; margin-bottom: .14rem; color: var(--white); }
+    .trust-sub { font-size: .79rem; color: var(--dim); }
 
-    .benefit-card {
-      background: linear-gradient(180deg, #fff, #f8fbff);
-      border: 1px solid var(--border-soft);
+    /* ═══════════════════════════════════════
+       SECTION COMMONS
+    ═══════════════════════════════════════ */
+    .section { padding: 5.5rem 0; }
+    .section-alt {
+      background: var(--bg-mid);
+      background-image: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(92,133,80,0.07) 0%, transparent 60%);
     }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--font-head); font-size: .78rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase; color: var(--green-hi);
+      margin-bottom: .75rem;
+    }
+    .eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--green-hi); }
+    .section-title {
+      font-family: var(--font-head); font-weight: 900;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      letter-spacing: -.01em; text-transform: uppercase;
+      line-height: 1.05; margin-bottom: .9rem;
+    }
+    .section-sub { font-size: .98rem; color: var(--muted); max-width: 540px; line-height: 1.65; }
 
-    .check-list, .x-list, .steps-list { list-style: none; padding: 0; margin: 0; }
-    .check-list li, .x-list li {
-      display: flex;
-      gap: .75rem;
-      align-items: flex-start;
-      padding: .75rem 0;
-      border-bottom: 1px solid var(--border-soft);
+    /* ═══════════════════════════════════════
+       SERVICE CARDS
+    ═══════════════════════════════════════ */
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.35rem; margin-top: 2.6rem; }
+    .service-card {
+      background: linear-gradient(160deg, #252b25 0%, #1e231e 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg); padding: 2rem 1.75rem;
+      display: flex; flex-direction: column; gap: 1rem;
+      position: relative; overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: border-color .25s, transform .25s, box-shadow .25s;
     }
-    .check-list li:last-child, .x-list li:last-child { border-bottom: none; }
-    .check { color: var(--success); font-weight: 800; }
-    .xmark { color: var(--danger); font-weight: 800; }
-    .helper-line { margin-top: 1rem; color: var(--text-600); }
+    /* subtle top accent line */
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green-hi), transparent);
+      opacity: 0; transition: opacity .25s;
+    }
+    /* green glow on hover */
+    .service-card::after {
+      content: ''; position: absolute; inset: 0; border-radius: var(--radius-lg);
+      box-shadow: inset 0 0 0 1px rgba(92,133,80,0.5);
+      opacity: 0; transition: opacity .25s;
+    }
+    .service-card:hover {
+      border-color: rgba(92,133,80,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.55), 0 0 30px rgba(74,107,63,0.2);
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-card:hover::after { opacity: 1; }
+    .svc-icon {
+      width: 52px; height: 52px; border-radius: var(--radius);
+      border: 1px solid var(--border-g);
+      background: linear-gradient(145deg, rgba(92,133,80,0.2), rgba(92,133,80,0.05));
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 0 16px rgba(92,133,80,0.15);
+    }
+    .svc-icon svg { width: 26px; height: 26px; stroke: var(--green-hi); fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .service-card h3 {
+      font-family: var(--font-head); font-size: 1.45rem; font-weight: 900;
+      text-transform: uppercase; letter-spacing: .03em;
+    }
+    .service-card p { font-size: .93rem; color: var(--muted); flex: 1; line-height: 1.62; }
 
-    .process-shell {
-      background: linear-gradient(180deg, #ffffff, #f4f8ff);
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-xl);
-      padding: 1.4rem;
+    /* ═══════════════════════════════════════
+       HOW IT WORKS
+    ═══════════════════════════════════════ */
+    .hiw-grid {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1.35rem; margin-top: 3rem; position: relative;
     }
-    .steps-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
-    .steps-list li {
-      display: grid;
-      grid-template-columns: 52px 1fr;
-      gap: .85rem;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: .95rem;
+    .hiw-grid::before {
+      content: ''; position: absolute;
+      top: 26px; left: calc(12.5% + 20px); right: calc(12.5% + 20px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-gc), var(--border-gc), transparent);
+      z-index: 0;
     }
-    .step-num {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      color: #fff;
-      background: linear-gradient(180deg, #3774ff, #1d57df);
+    .hiw-step { text-align: center; position: relative; z-index: 1; }
+    .hiw-num {
+      width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 1.1rem;
+      background: linear-gradient(145deg, #6a9a5c, #4a6b3f);
+      border: 3px solid var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-size: 1.2rem; font-weight: 900;
+      box-shadow: 0 0 0 1px var(--border-g), 0 4px 16px rgba(74,107,63,0.4);
     }
+    .hiw-step h4 {
+      font-family: var(--font-head); font-size: 1.05rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .05em; margin-bottom: .45rem;
+    }
+    .hiw-step p { font-size: .87rem; color: var(--muted); line-height: 1.58; }
 
-    .pricing-card .price { display: block; margin: .5rem 0 .7rem; font-size: 1.45rem; font-weight: 800; }
-    .pricing-reassurance { font-weight: 700; color: var(--ink-700); }
-
-    .before-after-card { padding: 0; overflow: hidden; }
-    .before-after-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: .35rem;
-      padding: .35rem;
-      background: #e5edfb;
+    /* ═══════════════════════════════════════
+       WHY SECTION
+    ═══════════════════════════════════════ */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+    .why-headline {
+      font-family: var(--font-head); font-weight: 900;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      text-transform: uppercase; line-height: 1.0;
+      letter-spacing: -.01em; margin-bottom: 1.1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
     }
-    .before-after-images img { height: 180px; object-fit: cover; border-radius: 10px; }
+    .why-headline em { font-style: normal; color: var(--green-hi); }
+    .why-sub { color: var(--muted); font-size: .97rem; line-height: 1.68; }
+    .why-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+    .why-card {
+      background: linear-gradient(160deg, #222822 0%, #1c221c 100%);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-left: 3px solid var(--green-hi);
+      border-radius: var(--radius); padding: 1.3rem;
+      box-shadow: var(--shadow-card);
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .why-card:hover {
+      border-color: rgba(92,133,80,0.5);
+      border-left-color: var(--green-hi);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.5), 0 0 20px rgba(74,107,63,0.15);
+    }
+    .why-card h4 {
+      font-family: var(--font-head); font-size: .95rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem;
+      color: var(--white);
+    }
+    .why-card p { font-size: .85rem; color: var(--muted); line-height: 1.58; }
+
+    /* ═══════════════════════════════════════
+       BEFORE / AFTER
+    ═══════════════════════════════════════ */
+    .ba-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.35rem; margin-top: 2.6rem; }
+    .ba-card {
+      border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-card);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .ba-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+    }
+    .ba-images { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #0a0c0a; }
+    .ba-images img { width: 100%; height: 195px; object-fit: cover; object-position: center; transition: filter .3s; }
+    .ba-card:hover .ba-images img { filter: brightness(1.05); }
     .ba-labels {
-      display: flex;
-      justify-content: space-between;
-      padding: .8rem 1rem 1rem;
-      color: var(--text-600);
-      font-size: .82rem;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      font-weight: 800;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: .75rem 1.1rem;
+      background: linear-gradient(135deg, #1e231e, #1a1e1a);
+      border-top: 1px solid var(--border);
     }
-
-    .testimonial-shell {
-      background: #eff5ff;
-      border: 1px solid #d5e3ff;
-      border-radius: var(--radius-lg);
-      min-height: 52px;
+    .ba-labels span {
+      font-family: var(--font-head); font-size: .76rem; font-weight: 800;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--dim);
     }
+    .ba-labels span.after { color: var(--green-hi); text-shadow: 0 0 10px rgba(92,133,80,0.5); }
 
+    /* ═══════════════════════════════════════
+       FINAL CTA
+    ═══════════════════════════════════════ */
     .final-cta {
-      background: linear-gradient(135deg, #0b1d39 0%, #12366d 58%, #1550a8 100%);
-      border-radius: var(--radius-xl);
-      color: #fff;
-      padding: 2.2rem;
-      box-shadow: var(--shadow-lg);
+      background: linear-gradient(135deg, #2a3d22 0%, #1e2e18 50%, #162410 100%);
+      border-top: 1px solid var(--border-g);
+      border-bottom: 1px solid rgba(74,107,63,0.2);
+      padding: 5rem 0; text-align: center;
+      position: relative; overflow: hidden;
     }
-    .final-cta p { color: #d5e4ff; max-width: 760px; }
-    .final-cta-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.4rem; }
-
-    .contact-box {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.35rem;
-      box-shadow: 0 12px 24px rgba(20, 37, 73, 0.08);
+    .final-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(92,133,80,0.18) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .contact-lines { display: grid; gap: .75rem; margin-top: .9rem; color: var(--text-700); }
+    .final-cta .wrap { position: relative; z-index: 1; }
+    .final-cta h2 {
+      font-family: var(--font-head); font-weight: 900;
+      font-size: clamp(2.1rem, 4.5vw, 3.3rem);
+      text-transform: uppercase; letter-spacing: -.01em; margin-bottom: .85rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+    .final-cta p { color: rgba(255,255,255,0.68); font-size: 1.07rem; margin-bottom: 2.1rem; }
 
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
     .footer {
-      margin-top: 2.4rem;
-      background: linear-gradient(160deg, #081225, #0f2040);
-      color: #fff;
-      padding: 2.6rem 0;
+      background: var(--bg-deeper);
+      background-image: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(74,107,63,0.06) 0%, transparent 60%);
+      border-top: 1px solid var(--border);
+      padding: 3.8rem 0 1.6rem;
     }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1.2rem; }
-    .footer-brand { display: flex; align-items: center; gap: .75rem; }
-    .footer-brand img { width: 58px; height: 58px; border-radius: 12px; }
-    .footer p, .footer a, .footer span { color: #d4def4; }
-    .footer-links { display: grid; gap: .45rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+    .footer-logo { height: 60px; width: auto; margin-bottom: 1.1rem; filter: drop-shadow(0 2px 10px rgba(92,133,80,0.25)); }
+    .footer-desc { font-size: .88rem; color: var(--dim); line-height: 1.68; max-width: 300px; }
+    .footer-col h4 {
+      font-family: var(--font-head); font-size: .78rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--silver); margin-bottom: 1.1rem;
+    }
+    .footer-links { display: grid; gap: .6rem; }
+    .footer-links a, .footer-contact a, .footer-contact span {
+      font-size: .88rem; color: var(--dim); display: block; transition: color .15s;
+    }
+    .footer-links a:hover, .footer-contact a:hover { color: var(--green-hi); }
+    .footer-contact { display: grid; gap: .6rem; }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 1.3rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .8rem; color: var(--dim);
+    }
 
-    @media (max-width: 980px) {
-      .hero-grid, .grid-4, .grid-3, .grid-2, .footer-grid, .steps-list { grid-template-columns: 1fr 1fr; }
-      .trust-shell { grid-template-columns: 1fr 1fr; }
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .ba-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; min-height: auto; padding: 3.5rem 0; }
+      .why-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hiw-grid { grid-template-columns: 1fr 1fr; }
+      .hiw-grid::before { display: none; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
       .trust-item:nth-child(2) { border-right: none; }
     }
-    @media (max-width: 760px) {
-      .nav-wrap { flex-direction: column; align-items: flex-start; }
-      .nav-links { flex-wrap: wrap; }
-      .hero-grid, .grid-4, .grid-3, .grid-2, .footer-grid, .steps-list, .trust-shell, .hero-trust-row { grid-template-columns: 1fr; }
-      .hero-panel img { height: 250px; }
-      .trust-item { border-right: none; border-bottom: 1px solid var(--border-soft); padding-bottom: .75rem; }
+    @media (max-width: 640px) {
+      .topbar-phone { display: none; }
+      .nav-links { display: none; }
+      .services-grid, .ba-grid, .why-benefits { grid-template-columns: 1fr; }
+      .hiw-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .trust-item { border-right: none; border-bottom: 1px solid var(--border); }
       .trust-item:last-child { border-bottom: none; }
-      .steps-list li { grid-template-columns: 1fr; }
-      .step-num { width: 44px; height: 44px; }
-      .section { padding: 3.8rem 0; }
-      .final-cta { padding: 1.4rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: .5rem; text-align: center; }
     }
   </style>
 </head>
 <body>
+
+  <!-- ── TOP BAR ── -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-social">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <div class="topbar-phone"><a href="tel:12185553887">(218) 555-3887</a></div>
+      <a href="intake.html" class="btn btn-primary btn-sm">Get Your Estimate</a>
+    </div>
+  </div>
+
+  <!-- ── MAIN NAV ── -->
   <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="#top" class="brand">
-        <img class="brand-logo" src="https://i.imgur.com/zkXZ5QW.png" alt="Junkyard Dawgs LLC logo" />
-        <div class="brand-text">
-          <span>Junkyard Dawgs LLC</span>
-          <span>Twin Cities Junk Removal</span>
-        </div>
+    <div class="wrap nav-wrap">
+      <a href="index.html">
+        <img class="brand-logo" src="assets/images/logo/Junkyard_dawgs_White_transparent_clean.png" alt="Junkyard Dawgs LLC" />
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="#results">Results</a>
-        <a href="#priority-list">Priority List</a>
+        <a href="#services">Junk Removal</a>
+        <a href="#services">Dumpster Rentals</a>
+        <a href="#services">Demolition</a>
+        <a href="#contact">Contact Us</a>
       </nav>
+      <a href="intake.html" class="btn btn-primary">Get Your Estimate</a>
     </div>
   </header>
 
-  <main id="top">
+  <main>
+
+    <!-- ── HERO ── -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow" style="background:rgba(255,255,255,.12); color:#d8e5ff;">Twin Cities Junk Removal</span>
-          <h1>Heavy-Duty Cleanup.<br />Professional Start to Finish.</h1>
-          <p class="lead">Fast junk removal and cleanouts for homeowners, landlords, and property managers who want the job handled right, on schedule, and without chaos.</p>
-
-          <div class="hero-trust-row">
-            <div class="trust-pill">Upfront quote clarity</div>
-            <div class="trust-pill">Professional crew standards</div>
-            <div class="trust-pill">Local Twin Cities service</div>
-          </div>
-
-          <div class="hero-actions">
-            <a href="intake.html" class="btn btn-primary">Get Your Quote</a>
-            <a href="#priority-list" class="btn btn-priority">Join the Priority List</a>
-          </div>
-          <p class="hero-note">Trusted by residential customers and repeat property partners across the metro.</p>
-        </div>
-
-        <aside class="hero-panel" aria-label="Service snapshot">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80" alt="Temporary junk removal placeholder showing work truck and cleanup activity" />
-          <div class="hero-panel-grid">
-            <div class="hero-stat"><strong>Rapid</strong><span>Quote workflow</span></div>
-            <div class="hero-stat"><strong>Clear</strong><span>Pricing process</span></div>
-            <div class="hero-stat"><strong>Reliable</strong><span>Service windows</span></div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="trust-strip section-tight">
-      <div class="container">
-        <div class="trust-shell">
-          <article class="trust-item">
-            <strong>Transparent pricing model</strong>
-            <span>Pricing reflects load size, access, material type, and conditions.</span>
-          </article>
-          <article class="trust-item">
-            <strong>No hidden add-ons</strong>
-            <span>Special handling factors are reviewed in the quote process.</span>
-          </article>
-          <article class="trust-item">
-            <strong>Professional communication</strong>
-            <span>Clear updates from request through completed removal.</span>
-          </article>
-          <article class="trust-item">
-            <strong>Built for repeat reliability</strong>
-            <span>Ideal for homeowners and ongoing service partners.</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Core Services</span>
-          <h2>High-accountability removal and cleanout services built for speed, safety, and follow-through.</h2>
-          <p class="lead">Designed for customers who value a clean process, strong communication, and consistent results.</p>
-        </div>
-
-        <div class="grid-3">
-          <a class="card image-card" href="intake.html">
-            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Temporary residential junk removal placeholder" />
-            <div class="image-card-content">
-              <h3>Residential Junk Removal</h3>
-              <p>Furniture, appliances, mattresses, and general household junk removed with a respectful, organized workflow.</p>
-              <span class="learn-more">Learn more →</span>
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="wrap" style="width:100%;max-width:var(--max);margin:0 auto;padding:0 1.25rem;">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <div class="hero-eyebrow">Twin Cities Junk Removal &amp; Demolition</div>
+            <h1>Clutter<br/>Happens.<br/><em>We Handle It.</em></h1>
+            <p class="hero-sub">Fast estimates, clear pricing, and professional service for homeowners, landlords, and property managers across the Twin Cities.</p>
+            <div class="hero-btns">
+              <a href="intake.html" class="btn btn-primary">Get Your Estimate &rarr;</a>
+              <a href="tel:12185553887" class="btn btn-secondary">Call Us</a>
             </div>
-          </a>
-
-          <a class="card image-card" href="intake.html">
-            <img src="https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?auto=format&fit=crop&w=1200&q=80" alt="Temporary property cleanout placeholder" />
-            <div class="image-card-content">
-              <h3>Property Cleanouts</h3>
-              <p>Garage, basement, turnover, and transition cleanouts for fast-moving timelines and complex spaces.</p>
-              <span class="learn-more">Learn more →</span>
+            <div class="hero-trust">
+              <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span>Clear pricing. Professional service. No surprises.</span>
             </div>
-          </a>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </section>
 
-          <a class="card image-card" href="partner-intake.html">
-            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Temporary ongoing service partnership placeholder" />
-            <div class="image-card-content">
-              <h3>Ongoing Service Partnerships</h3>
-              <p>Reliable support for property managers, landlords, realtors, and repeat partners who need consistency.</p>
-              <span class="learn-more">Partner Request →</span>
+    <!-- ── TRUST BAR ── -->
+    <div class="trust-bar">
+      <div class="wrap">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
             </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Service Standards</span>
-          <h2>Why customers choose Junkyard Dawgs when clean execution matters most.</h2>
-        </div>
-        <div class="grid-4">
-          <article class="card benefit-card">
-            <h3>Clear Pricing</h3>
-            <p>Pricing is based on load size, access, material type, and job conditions.</p>
-          </article>
-          <article class="card benefit-card">
-            <h3>No Surprise Fees</h3>
-            <p>Stairs, long carry distance, heavy items, and special handling are reviewed during quoting.</p>
-          </article>
-          <article class="card benefit-card">
-            <h3>Confirmed Scheduling</h3>
-            <p>Lock in your preferred service window with a deposit during the intake process.</p>
-          </article>
-          <article class="card benefit-card">
-            <h3>Twin Cities Focused</h3>
-            <p>Local service with professional communication and dependable follow-through.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container grid-2">
-        <article class="card">
-          <h3>What We Take</h3>
-          <ul class="check-list">
-            <li><span class="check">✓</span><span>Furniture</span></li>
-            <li><span class="check">✓</span><span>Appliances</span></li>
-            <li><span class="check">✓</span><span>Mattresses</span></li>
-            <li><span class="check">✓</span><span>Garage clutter</span></li>
-            <li><span class="check">✓</span><span>Household junk</span></li>
-            <li><span class="check">✓</span><span>Cleanout debris</span></li>
-            <li><span class="check">✓</span><span>Storage unit contents</span></li>
-            <li><span class="check">✓</span><span>Light yard items</span></li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>What We Don’t Take</h3>
-          <ul class="x-list">
-            <li><span class="xmark">✕</span><span>Hazardous chemicals</span></li>
-            <li><span class="xmark">✕</span><span>Wet paint</span></li>
-            <li><span class="xmark">✕</span><span>Asbestos</span></li>
-            <li><span class="xmark">✕</span><span>Biohazard waste</span></li>
-            <li><span class="xmark">✕</span><span>Regulated medical waste</span></li>
-          </ul>
-        </article>
-      </div>
-      <div class="container">
-        <p class="helper-line">Not sure about an item? Include it in your request and we’ll confirm.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container process-shell">
-        <div class="section-header">
-          <span class="eyebrow">How It Works</span>
-          <h2>Simple steps, professional execution, no guesswork.</h2>
-        </div>
-        <ol class="steps-list">
-          <li>
-            <div class="step-num">1</div>
             <div>
-              <h3>Send your job details</h3>
-              <p>Share items, access conditions, and job specifics for an accurate starting quote.</p>
+              <div class="trust-label">Licensed &amp; Insured</div>
+              <div class="trust-sub">Fully covered on every job</div>
             </div>
-          </li>
-          <li>
-            <div class="step-num">2</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
             <div>
-              <h3>Review your quote</h3>
-              <p>See your estimated pricing clearly before moving into scheduling.</p>
+              <div class="trust-label">Confirmed Scheduling</div>
+              <div class="trust-sub">Lock in your service window</div>
             </div>
-          </li>
-          <li>
-            <div class="step-num">3</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            </div>
             <div>
-              <h3>Pick your service window</h3>
-              <p>Choose a service window that fits your timeline and access needs.</p>
+              <div class="trust-label">Clear Pricing</div>
+              <div class="trust-sub">See your estimate before you commit</div>
             </div>
-          </li>
-          <li>
-            <div class="step-num">4</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </div>
             <div>
-              <h3>Problem Solved</h3>
-              <p>Your junk is removed and your space is back under control.</p>
+              <div class="trust-label">Responsible Disposal</div>
+              <div class="trust-sub">Hauled and handled the right way</div>
             </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section" id="pricing">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Transparent Pricing</span>
-          <h2>Transparent Pricing Structure</h2>
-          <p class="lead">Final pricing depends on load size, material type, stairs, carry distance, and any special handling required.</p>
-          <p class="pricing-reassurance">You’ll see your estimated price before confirming your job.</p>
-        </div>
-        <div class="grid-4">
-          <article class="card pricing-card">
-            <h3>Minimum Service</h3>
-            <span class="price">$175</span>
-            <p>Minimum includes removal of one bulky item or equivalent small load.</p>
-          </article>
-          <article class="card pricing-card">
-            <h3>Labor Adjustments</h3>
-            <span class="price">Quote-Based Adjustment</span>
-            <p>Long carry distances of 75 feet or more may affect pricing and are reviewed during the quote process.</p>
-          </article>
-          <article class="card pricing-card">
-            <h3>Heavy Items</h3>
-            <span class="price">Special Handling</span>
-            <p>Concrete, dirt, roofing, tile, and other dense materials require special handling.</p>
-          </article>
-          <article class="card pricing-card">
-            <h3>Service Area &amp; Travel</h3>
-            <span class="price">30–50+ Miles</span>
-            <p>30-mile service area included. 30–50 miles with travel adjustment. 50+ miles by approval.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="results">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Before / After Results</span>
-          <h2>Before-and-after examples from junk removal and cleanout work.</h2>
-        </div>
-        <div class="grid-3">
-          <article class="card before-after-card">
-            <div class="before-after-images">
-              <img src="https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?auto=format&fit=crop&w=900&q=80" alt="Temporary before placeholder for garage junk removal" />
-              <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80" alt="Temporary after placeholder for garage junk removal" />
-            </div>
-            <div class="ba-labels"><span>Before</span><span>After</span></div>
-          </article>
-          <article class="card before-after-card">
-            <div class="before-after-images">
-              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Temporary before placeholder for basement cleanout" />
-              <img src="https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?auto=format&fit=crop&w=900&q=80" alt="Temporary after placeholder for basement cleanout" />
-            </div>
-            <div class="ba-labels"><span>Before</span><span>After</span></div>
-          </article>
-          <article class="card before-after-card">
-            <div class="before-after-images">
-              <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=900&q=80" alt="Temporary before placeholder for property cleanout" />
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="Temporary after placeholder for property cleanout" />
-            </div>
-            <div class="ba-labels"><span>Before</span><span>After</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Testimonials</span>
-          <h2>What Customers Are Saying</h2>
-        </div>
-        <div class="testimonial-shell"></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="final-cta">
-          <h2>Junkyard Dawgs serves the Twin Cities with professional junk removal.</h2>
-          <p>Request your quote or join the priority list to get started.</p>
-          <div class="final-cta-actions">
-            <a href="intake.html" class="btn btn-primary">Get Your Quote</a>
-            <a href="partner-intake.html" class="btn btn-priority">Partner &amp; Portfolio Request</a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="priority-list">
-      <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Contact</span>
-          <h2>Get in touch with Junkyard Dawgs</h2>
-          <p class="lead">Request a quote or join the priority list to stay updated.</p>
-        </div>
-        <div class="contact-box">
-          <h3>Contact Information</h3>
-          <div class="contact-lines">
-            <p><strong>Email:</strong> info@junkyarddawgsllc.com</p>
-            <p><strong>Phone:</strong> (218) 555-3887</p>
-            <p><strong>Service Area:</strong> Twin Cities, Minnesota</p>
-          </div>
-          <div class="final-cta-actions" style="margin-bottom:0;">
-            <a class="btn btn-priority" href="mailto:info@junkyarddawgsllc.com?subject=Priority%20List%20Request">Join Priority List</a>
-            <a class="btn btn-light" href="tel:12185553887">Call for Updates</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">
-          <img src="https://i.imgur.com/zkXZ5QW.png" alt="Junkyard Dawgs LLC logo" />
-          <div>
-            <h3>Junkyard Dawgs LLC</h3>
-            <p>Professional junk removal with clear pricing, respectful service, and no surprises.</p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <div class="footer-links">
-          <a href="pricing.html">Pricing</a>
-          <a href="#services">Services</a>
-          <a href="#results">Results</a>
-          <a href="#priority-list">Priority List</a>
-        </div>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <div class="footer-links">
-          <a href="tel:12185553887">(218) 555-3887</a>
-          <a href="mailto:info@junkyarddawgsllc.com">info@junkyarddawgsllc.com</a>
-          <span>Twin Cities, Minnesota</span>
         </div>
       </div>
     </div>
+
+    <!-- ── SERVICES ── -->
+    <section class="section section-alt" id="services">
+      <div class="wrap">
+        <div class="eyebrow">What We Do</div>
+        <h2 class="section-title">Three Services.<br/>One Crew. Done Right.</h2>
+        <p class="section-sub">Junk removal goes straight into our estimate pipeline. Dumpster rentals and demolition have their own dedicated request process.</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6M9 6V4h6v2"/></svg>
+            </div>
+            <h3>Junk Removal</h3>
+            <p>We haul it all — quick, clean, and on schedule. Furniture, appliances, cleanout debris, and more.</p>
+            <a href="intake.html" class="btn btn-primary">Get Your Estimate &rarr;</a>
+          </div>
+          <div class="service-card">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M3 11l2-6h14l2 6"/><line x1="7" y1="11" x2="7" y2="21"/><line x1="12" y1="11" x2="12" y2="21"/><line x1="17" y1="11" x2="17" y2="21"/></svg>
+            </div>
+            <h3>Dumpster Rentals</h3>
+            <p>Right-size dumpsters delivered and picked up on your schedule. Flexible rental periods for any project.</p>
+            <a href="dumpster-rentals.html" class="btn btn-secondary">Learn More &rarr;</a>
+          </div>
+          <div class="service-card">
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Demolition</h3>
+            <p>Clean, controlled demolition with full debris removal. Sheds, decks, interior teardowns — handled.</p>
+            <a href="demolition.html" class="btn btn-secondary">Learn More &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ── -->
+    <section class="section">
+      <div class="wrap">
+        <div class="eyebrow">The Process</div>
+        <h2 class="section-title">Simple Steps.<br/>No Guesswork.</h2>
+        <div class="hiw-grid">
+          <div class="hiw-step">
+            <div class="hiw-num">1</div>
+            <h4>Tell Us About the Job</h4>
+            <p>Submit your job details and photos online in minutes.</p>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-num">2</div>
+            <h4>Get Your Estimate</h4>
+            <p>A transparent estimate built on your actual job conditions — not a flat guess.</p>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-num">3</div>
+            <h4>Pick Your Service Window</h4>
+            <p>Choose your window, pay a small deposit, and you're locked in.</p>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-num">4</div>
+            <h4>Problem Solved.</h4>
+            <p>Your space is cleared. Your junk is gone. Done.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHY JUNKYARD DAWGS ── -->
+    <section class="section section-alt">
+      <div class="wrap">
+        <div class="why-grid">
+          <div>
+            <div class="eyebrow">Why Us</div>
+            <h2 class="why-headline">Done Right.<br/><em>Start to Finish.</em></h2>
+            <p class="why-sub">We're not a franchise. Not a call center. We're a local crew that shows up, does the work, and leaves the place clean.</p>
+          </div>
+          <div class="why-benefits">
+            <div class="why-card">
+              <h4>Job-Based Estimates</h4>
+              <p>Estimates built on your actual job — not a flat-rate guess that costs you more at the door.</p>
+            </div>
+            <div class="why-card">
+              <h4>Deposit Applied</h4>
+              <p>Your deposit locks the service window and applies directly to your final invoice.</p>
+            </div>
+            <div class="why-card">
+              <h4>No Silent Changes</h4>
+              <p>Any pricing adjustments due to job conditions are communicated before we finish.</p>
+            </div>
+            <div class="why-card">
+              <h4>Built for Reliability</h4>
+              <p>Clear communication and a clean process from start to finish, every time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BEFORE / AFTER ── -->
+    <section class="section" id="results">
+      <div class="wrap">
+        <div class="eyebrow">Results</div>
+        <h2 class="section-title">The Work Speaks<br/>for Itself.</h2>
+        <div class="ba-grid">
+          <div class="ba-card">
+            <div class="ba-images">
+              <img src="assets/images/jobs/1000035668.jpg" alt="Before junk removal" />
+              <img src="assets/images/jobs/1000035669.jpg" alt="After junk removal" />
+            </div>
+            <div class="ba-labels"><span>Before</span><span class="after">After</span></div>
+          </div>
+          <div class="ba-card">
+            <div class="ba-images">
+              <img src="assets/images/jobs/1000035670.jpg" alt="Before cleanout" />
+              <img src="assets/images/jobs/1000035671.jpg" alt="After cleanout" />
+            </div>
+            <div class="ba-labels"><span>Before</span><span class="after">After</span></div>
+          </div>
+          <div class="ba-card">
+            <div class="ba-images">
+              <img src="assets/images/jobs/1000035667.jpg" alt="Before demo job" />
+              <img src="assets/images/jobs/1000035667.jpg" alt="After demo job" />
+            </div>
+            <div class="ba-labels"><span>Before</span><span class="after">After</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FINAL CTA ── -->
+    <section class="final-cta">
+      <div class="wrap">
+        <h2>Ready to Clear It Out?</h2>
+        <p>Get your estimate online in minutes. No phone tag. No surprises.</p>
+        <a href="intake.html" class="btn btn-dark">Get Your Estimate &rarr;</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <img class="footer-logo" src="assets/images/logo/Junkyard_dawgs_White_transparent_clean.png" alt="Junkyard Dawgs LLC" />
+          <p class="footer-desc">Professional junk removal, dumpster rentals, and demolition across the Twin Cities. Honest estimates. No surprises.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#results">Results</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact">
+            <a href="tel:12185553887">(218) 555-3887</a>
+            <a href="mailto:info@junkyarddawgsmn.com">info@junkyarddawgsmn.com</a>
+            <span>Twin Cities, Minnesota</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Junkyard Dawgs LLC. All rights reserved.</span>
+        <span>Twin Cities Junk Removal &middot; Dumpster Rentals &middot; Demolition</span>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>
